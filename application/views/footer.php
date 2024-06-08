@@ -1,10 +1,31 @@
+<style>
+    @media screen and (max-width: 750px) {
+        .flex-tautan {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .flex-jasa {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width:750px) and (max-width:1000px) {
+        .flex-footer {
+            width: 50%;
+        }
+    }
+</style>
+
+
 <footer id="footer" class="footer">
 
     <div class="footer-content position-relative">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-3 flex-footer">
                     <div class="footer-info">
                         <h3>Combo Putra</h3>
                         <p>
@@ -18,12 +39,12 @@
                             <a href="https://www.facebook.com/comboputra79" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
                             <a href="https://www.tokopedia.com/comboputra" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/tokopedia.png" alt="" width="22px"></i></a>
                             <a href="https://shopee.co.id/comboputra" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/shopee.png" alt="" width="28px"></i></a>
-                            <a href="https://www.bukalapak.com/u/combo_putra_82495" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/bukalapak.png" alt="" width="25px"></i></a>
+                            <!-- <a href="https://www.bukalapak.com/u/combo_putra_82495" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/bukalapak.png" alt="" width="25px"></i></a> -->
                         </div>
                     </div>
                 </div><!-- End footer info column-->
 
-                <div class="col-lg-2 col-md-3 footer-links">
+                <div class="col-lg-2 col-md-3 footer-links flex-tautan">
                     <h4>Tautan</h4>
                     <ul>
                         <li><a href="<?php echo base_url('Home') ?>">Beranda</a></li>
@@ -34,7 +55,7 @@
                     </ul>
                 </div><!-- End footer links column-->
 
-                <div class="col-lg-2 col-md-3 footer-links">
+                <div class="col-lg-2 col-md-3 footer-links flex-tautan">
                     <h4>Pelayanan Kami</h4>
                     <ul>
                         <li><a href="">Toko Combo Putra</a></li>
@@ -45,7 +66,7 @@
                     </ul>
                 </div><!-- End footer links column-->
 
-                <div class="col-lg-4 col-md-3 footer-links">
+                <div class="col-lg-4 col-md-3 footer-links flex-jasa">
                     <h4>Kami Menerima</h4>
                     <ul style="margin-left: 3%;">
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding:0.5%" src="<?php echo base_url('assets/') ?>img/visa.png" alt="">

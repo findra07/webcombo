@@ -17,9 +17,16 @@ class KatalogModel extends CI_Model
             ->join('tabel_kategori tk', 'tk.id_kategori = tsub.id_kategori', 'inner')
             ->join('tabel_foto_barang tfb', 'tfb.id_barang = tb.id_barang', 'left');
 
-        if ($nama_produk !== "") {
-            $this->db->like('tb.nama_barang', $nama_produk, 'both');
+        $keywords = explode(' ', $nama_produk);
+
+        foreach ($keywords as $keyword) {
+            if (!empty($keyword)) {
+                $this->db->like('tb.nama_barang', $keyword, 'both');
+            }
         }
+        // if ($nama_produk !== "") {
+        //     $this->db->like('tb.nama_barang', $nama_produk, 'both');
+        // }
 
         if ($id == "null") {
             "";
@@ -28,7 +35,7 @@ class KatalogModel extends CI_Model
         }
 
         if ($id_subkategori == "null") {
-            "";
+            $this->db->like('tsub.id_subkategori', '000000000011', 'both');
         } else {
             $this->db->like('tsub.id_subkategori', $id_subkategori, 'both');
         }
@@ -83,7 +90,7 @@ class KatalogModel extends CI_Model
         if ($idmerk === "") {
             if ($id === "") {
                 if ($idsub === "") {
-                    $filter = 'WHERE tm.status_merk = 0 ';
+                    $filter = "WHERE tm.status_merk = 0 ";
                 } else {
                     $filter = "WHERE tm.status_merk = 0 AND tsub.id_subkategori LIKE '%$idsub%' ";
                 }
@@ -110,20 +117,6 @@ class KatalogModel extends CI_Model
             }
         }
 
-        // if ($id === "") {
-        //     if ($idsub === "") {
-        //         $filter = 'WHERE tm.status_merk = 0 ';
-        //     } else {
-        //         $filter = "WHERE tm.status_merk = 0 AND tsub.id_subkategori LIKE '%$idsub%' ";
-        //     }
-        // } else {
-        //     if ($idsub === "") {
-        //         $filter = "WHERE tm.status_merk = 0 AND tk.id_kategori LIKE '%$id%'";
-        //     } else {
-        //         $filter = "WHERE tm.status_merk = 0 AND tk.id_kategori LIKE '%$id%' AND tsub.id_subkategori LIKE '%$idsub%' ";
-        //     }
-        // }
-
         $data = $this->db->query("SELECT DISTINCT tb.id_barang, tb.id_merk, tb.status_barang, tb.status_product, tk.id_kategori, tk.nama_kategori, tsub.id_subkategori, tsub.nama_subkategori, tm.id_merk, tm.nama_merk, tm.status_merk
         FROM tabel_barang tb 
         INNER JOIN tabel_subkategori tsub ON tb.id_subkategori = tsub.id_subkategori 
@@ -149,9 +142,17 @@ class KatalogModel extends CI_Model
             ->join('tabel_stok ts', 'tb.id_barang = ts.id_barang', 'inner')
             ->join('tabel_foto_barang tfb', 'tfb.id_barang = tb.id_barang', 'left');
 
-        if ($nama_produk !== "") {
-            $this->db->like('tb.nama_barang', $nama_produk, 'both');
+        $keywords = explode(' ', $nama_produk);
+
+        foreach ($keywords as $keyword) {
+            if (!empty($keyword)) {
+                $this->db->like('tb.nama_barang', $keyword, 'both');
+            }
         }
+
+        // if ($nama_produk !== "") {
+        //     $this->db->like('tb.nama_barang', $nama_produk, 'both');
+        // }
 
         if ($id == "null") {
             "";
@@ -160,7 +161,7 @@ class KatalogModel extends CI_Model
         }
 
         if ($id_subkategori == "null") {
-            "";
+            $this->db->like('tsub.id_subkategori', '000000000011', 'both');
         } else {
             $this->db->like('tsub.id_subkategori', $id_subkategori, 'both');
         }
@@ -296,6 +297,20 @@ class KatalogModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang WHERE tb.status_barang ='0' AND tk.id_kategori = '000000000179'
         ORDER BY ts.stok_jual DESC LIMIT 6")->result();
+
+        return $data;
+    }
+
+    public function jml_penjualan()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jml FROM `tabel_jual` WHERE date(tanggal_jual) = CURRENT_DATE()")->row();
+
+        return $data;
+    }
+
+    public function jml_pengiriman()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jml FROM `tabel_surat_jalan` WHERE date(tanggal_surat_jalan) = CURRENT_DATE()")->row();
 
         return $data;
     }

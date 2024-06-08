@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>UpConstruction Bootstrap Template - Projects</title>
+    <title>COMBO PUTRA - Katalog</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?php echo base_url('assets/') ?>img/favicon.png" rel="icon">
-    <link href="<?php echo base_url('assets/') ?>img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?php echo base_url('assets/') ?>img/combo-logo.png" rel="icon">
+    <link href="<?php echo base_url('assets/') ?>img/combo-logo.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,8 @@
         /* border: 1px solid black; */
         border-radius: 5px;
         padding: 10px 10px 10px 10px;
+        display: block;
+        margin: auto;
     }
 
     .image-wrapper {
@@ -60,6 +62,17 @@
         border: 0.5px solid rgba(82, 86, 94, 0.3);
         border-radius: 5px;
 
+    }
+
+    .h-100::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 36.5%;
+        background-color: #f5f6f7;
+        z-index: -1;
     }
 
     .uppercase {
@@ -72,6 +85,7 @@
         /* border: 1px solid black; */
         font-size: small;
         /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+        /* background-color: #f5f6f7; */
     }
 
     .itembrg {
@@ -236,6 +250,71 @@
     .page-link.active {
         background-color: #337ab7;
     }
+
+
+    @media screen and (min-width:1000px) and (max-width:1180px) {
+        .img-fluid {
+            height: 154px !important;
+        }
+
+        .image-wrapper {
+            height: 250px;
+        }
+    }
+
+    @media screen and (min-width:1181px) and (max-width:1368px) {
+        .img-fluid {
+            height: 188px !important;
+        }
+
+        .image-wrapper {
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .flex-cari {
+            margin-top: 3%;
+        }
+
+        .blog .sidebar .search-form form {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 740px) {
+        .flex-produk {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .image-wrapper {
+            height: 300px;
+        }
+
+        .image-wrapper img {
+            height: 189px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .image-wrapper {
+            height: 280px;
+        }
+
+        .image-wrapper img {
+            height: 160px;
+        }
+
+        .h-100::before {
+            height: 42%;
+        }
+
+        .projects .portfolio-content .portfolio-info {
+            height: 58%;
+        }
+    }
 </style>
 
 <body>
@@ -269,7 +348,7 @@
                         <?php echo $this->input->get('merk') ?>
                     </div>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div style="padding-right: 0;" class="col-lg-6 flex-cari" data-aos="fade-up" data-aos-delay="100">
                         <div class="cari sidebar">
                             <div class="sidebar-item search-form">
                                 <!-- <h3 class=" sidebar-title">Search</h3> -->
@@ -413,7 +492,9 @@
                                         status = "PreOrder"
                                     }
 
-                                    html += `<div class="col-lg-3 col-md-6 gy-4 portfolio-item filter-remodeling portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                                    harga = value.harga_jual;
+
+                                    html += `<div class="col-lg-3 col-md-6 gy-4 portfolio-item filter-remodeling portfolio-container flex-produk" data-aos="fade-up" data-aos-delay="200">
                                                     <div class="image-wrapper">
                                                         <div class="portfolio-content h-100">
                                                             <div>
@@ -423,16 +504,16 @@
                                                                     <a href="${gambar}" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                                                     <a href="<?php echo base_url('ProdukSingle?id_kategori=') ?>${value.id_kategori}~${value.nama_kategori}&id_subkategori=${value.id_subkategori}~${value.nama_subkategori}&id_barang=${value.id_barang}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                                                 </div>
-                                                            </div>
+                                                            </div>                                                            
                                                             <div class="namabrg">
-                                                                <p class="fontlato"><b>Rp ${(value.harga_jual)}</b></p>
+                                                                <p class="fontlato"><b>Rp ${harga}</b></p>
                                                                 <p class="itembrg">${value.nama_barang}</p>
                                                                 <p class="hrgstatus fontlato">                                                                    
                                                                     <label class="jenisbrg">
                                                                         ${status}
                                                                     </label>
                                                                 </p>
-                                                            </div>
+                                                            </div>                                                            
                                                         </div>
                                                     </div>
                                                 </div>`;

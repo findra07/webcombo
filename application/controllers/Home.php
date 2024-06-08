@@ -10,6 +10,7 @@ class Home extends CI_Controller
         parent::__construct();
         $this->load->model('KatalogModel');
         $this->load->model('CatModel');
+        $this->load->model('VisitsModel');
     }
 
 
@@ -31,6 +32,21 @@ class Home extends CI_Controller
         $data['catpropan'] = $this->CatModel->merkpropan();
         $data['catnippon'] = $this->CatModel->merknippon();
         $data['catpremio'] = $this->CatModel->merkpremio();
+
+        $data['jml_penjualan'] = $this->KatalogModel->jml_penjualan();
+        $data['jml_pengiriman'] = $this->KatalogModel->jml_pengiriman();
+
+        $this->VisitsModel->record_visit();
+        $visit_count = $this->VisitsModel->get_visit_count();
+
+        //hari ini
+        $today = date('Y-m-d');
+
+        //kunjungan hari ini
+        $today_visit_count = $this->VisitsModel->get_visit_byday($today);
+
+        $data['visit_count'] = $visit_count;
+        $data['today_visit_count'] = $today_visit_count;
 
 
         $this->load->view('home', $data);

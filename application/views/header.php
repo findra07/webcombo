@@ -1,3 +1,12 @@
+<style>
+    @media screen and (max-width: 932px) {
+        .header .logo img {
+            max-height: 25px;
+        }
+    }
+</style>
+
+
 <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
