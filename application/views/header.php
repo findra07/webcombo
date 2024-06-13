@@ -25,7 +25,7 @@
                 <li><a href="<?php echo base_url('Katalog') ?>" class="">Produk</a></li>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
-                        <li><a href="<?php echo base_url('gallery') ?>">Outbond</a></li>
+                        <li><a href="<?php echo base_url('Gallery') ?>">Outbond</a></li>
                         <li class="dropdown"><a href="#"><span>Combo Putra</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
                                 <li><a href="#">17 Agustus</a></li>
@@ -40,7 +40,7 @@
                         <!-- <li><a href="#">Dropdown 4</a></li> -->
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url('contact') ?>">Hubungi Kami</a></li>
+                <li><a href="<?php echo base_url('Contact') ?>">Hubungi Kami</a></li>
             </ul>
         </nav><!-- .navbar -->
 

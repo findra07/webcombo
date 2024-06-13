@@ -46,7 +46,7 @@
     <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
-        <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+        <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/outbond.jpg');">
             <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
                 <h2>Galeri</h2>
@@ -71,7 +71,7 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond2.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">December 12</span> -->
                             </div>
 
@@ -106,7 +106,7 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond7.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">March 19</span> -->
                             </div>
 
@@ -141,7 +141,7 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond5.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">June 24</span> -->
                             </div>
 
@@ -176,7 +176,7 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond3.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">August 05</span> -->
                             </div>
 
@@ -211,7 +211,7 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-5.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond4.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">September 17</span> -->
                             </div>
 
@@ -246,34 +246,9 @@
                         <div class="post-item position-relative h-100">
 
                             <div class="post-img position-relative overflow-hidden">
-                                <img src="assets/img/blog/blog-6.jpg" class="img-fluid" alt="">
+                                <img src="<?php echo base_url('assets/') ?>img/outbond6.jpg" class="img-fluid" alt="">
                                 <!-- <span class="post-date">December 07</span> -->
                             </div>
-
-                            <!-- <div class="post-content d-flex flex-column">
-
-                                <h3 class="post-title">Distinctio provident quibusdam numquam aperiam aut</h3>
-
-                                <div class="meta d-flex align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-person"></i> <span class="ps-2">Julia White</span>
-                                    </div>
-                                    <span class="px-3 text-black-50">/</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                                    </div>
-                                </div>
-
-                                <p>
-                                    Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
-                                </p>
-
-                                <hr>
-
-                                <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-
-                            </div> -->
-
                         </div>
                     </div><!-- End post list item -->
 
@@ -281,9 +256,9 @@
 
                 <div class="blog-pagination">
                     <ul class="justify-content-center">
-                        <li><a href="#">1</a></li>
+                        <li><a href="<?php echo base_url('Gallery/galeri2') ?>">1</a></li>
                         <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <!-- <li><a href="#">3</a></li> -->
                     </ul>
                 </div><!-- End blog pagination -->
 

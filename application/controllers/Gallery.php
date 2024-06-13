@@ -8,6 +8,11 @@ class Gallery extends CI_Controller
     {
         $this->load->view('gallery');
     }
+
+    public function galeri2()
+    {
+        $this->load->view('gallery2');
+    }
 }
 
 /* End of file Gallery.php */
