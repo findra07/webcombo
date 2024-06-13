@@ -296,7 +296,7 @@
     <?php $this->load->view('footer'); ?>
     <!-- End Footer -->
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 

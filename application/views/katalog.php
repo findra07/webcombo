@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -113,11 +114,12 @@
         margin-top: 1%;
         /* margin-left: 3px; */
         /* margin-bottom: 0; */
-        font-size: 14px;
+        font-size: 15px;
         font-style: italic;
         color: rgba(82, 86, 94, 0.3);
         /* text-decoration: underline; */
-        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: lato;
+        font-weight: 300;
     }
 
     .loc {
@@ -148,9 +150,10 @@
     }
 
     .fontlato {
-        font-family: 'lato Medium';
+        font-family: lato;
+        font-weight: 500;
         margin-bottom: auto;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .categories {
@@ -170,7 +173,7 @@
     }
 
     .list-collapse {
-        font-size: 14px;
+        font-size: 16px;
         border-bottom: 1px solid rgba(82, 86, 94, 0.3);
         padding: 10px 0 5px 0;
         text-decoration: none !important;
@@ -200,6 +203,8 @@
     .btn-toolbar {
         justify-content: flex-end;
         margin-top: 5%;
+        font-family: lato;
+        font-weight: 500;
     }
 
     .text-centerloading {
@@ -207,6 +212,8 @@
         margin-top: 1.5%;
         margin-right: 1%;
         font-style: italic;
+        font-family: lato;
+        font-weight: 200;
     }
 
     .page-link {
@@ -251,6 +258,10 @@
         background-color: #337ab7;
     }
 
+    .image-wrapper:hover {
+        border: 1px solid #337ab7;
+    }
+
 
     @media screen and (min-width:1000px) and (max-width:1180px) {
         .img-fluid {
@@ -282,9 +293,51 @@
         }
     }
 
+    @media screen and (max-width: 1920px) {
+        .flex-produk {
+            /* width: 50%; */
+            padding-bottom: 0.5rem;
+            margin-top: var(--bs-gutter-y);
+            --bs-gutter-y: 0.5rem;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            --bs-gutter-x: 0.75rem;
+        }
+    }
+
+    @media screen and (max-width: 1366px) {
+        .flex-produk {
+            /* width: 50%; */
+            padding-bottom: 0.5rem;
+            margin-top: var(--bs-gutter-y);
+            --bs-gutter-y: 0.5rem;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            --bs-gutter-x: 0.75rem;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .flex-produk {
+            /* width: 50%; */
+            padding-bottom: 0.5rem;
+            margin-top: var(--bs-gutter-y);
+            --bs-gutter-y: 0.5rem;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            --bs-gutter-x: 0.75rem;
+        }
+    }
+
     @media screen and (max-width: 740px) {
         .flex-produk {
             width: 50%;
+            padding-bottom: 0.5rem;
+            margin-top: var(--bs-gutter-y);
+            --bs-gutter-y: 0.5rem;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            --bs-gutter-x: 0.75rem;
         }
     }
 
@@ -295,6 +348,12 @@
 
         .image-wrapper img {
             height: 189px;
+        }
+
+        .accordion {
+            height: 400px;
+            overflow: scroll;
+            padding-right: 3%;
         }
     }
 
@@ -313,6 +372,16 @@
 
         .projects .portfolio-content .portfolio-info {
             height: 58%;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width:960px) {
+        .flex-tabname {
+            width: 35%;
+        }
+
+        .flex-tab {
+            width: 65%;
         }
     }
 </style>
@@ -341,7 +410,7 @@
         <section id="projects blog" class="projects blog">
             <div class="container" data-aos="fade-up">
                 <div class="row mb-3">
-                    <div class="loc col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="loc col-lg-6" style="font-family: lato; font-weight:500;" data-aos="fade-up" data-aos-delay="100">
                         <a href="<?php echo base_url('Katalog') ?>">Produk |</a>
                         <a href="<?php echo base_url('Katalog?id_kategori=') . $this->input->get('id_kategori') . '&nama_kategori=' . $this->input->get('nama_kategori'); ?>"><?php echo $this->input->get('nama_kategori') . ' |' ?></a>
                         <a href="<?php echo base_url('Katalog?id_kategori=') . $this->input->get('id_kategori') . '&nama_kategori=' . $this->input->get('nama_kategori') . '&id_subkategori=' . $this->input->get('id_subkategori') . '&nama_subkategori=' . $this->input->get('nama_subkategori'); ?>"><?php echo $this->input->get('nama_subkategori') . ' |' ?></a>
@@ -353,10 +422,10 @@
                             <div class="sidebar-item search-form">
                                 <!-- <h3 class=" sidebar-title">Search</h3> -->
                                 <form action="" class="">
-                                    <input type="text" placeholder="masukkan nama barang ..." name="search" id="search"><i class="bi bi-search"></i>
+                                    <input style="font-family: lato; font-weight:400;" type="text" placeholder="masukkan nama barang ..." name="search" id="search"><i class="bi bi-search"></i>
                                     <!-- <button type="submit"><i class="bi bi-search"></i></button> -->
                                 </form>
-                                <div class="text-centerloading" id="loading" style="display: none;">
+                                <div class="text-centerloading" id="loading" style="display: none; ">
                                     <h6>searching ...</h6>
                                 </div>
 
@@ -367,7 +436,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 flex-tabname">
                         <div class="sidebar">
                             <div class="sidebar-item categories" data-aos="fade-up" data-aos-delay="200">
                                 <h3 class=" sidebar-title dftrkat">KATEGORI</h3>
@@ -382,7 +451,7 @@
                                         <?php foreach ($kategori as $kategori_item) : ?>
                                             <div class="dropdown show">
                                                 <?php if (!isset($kategori_ditampilkan[$kategori_item->nama_kategori])) : ?>
-                                                    <a class="list-collapse accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-<?= $kategori_item->id_kategori ?>" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                    <a style="font-family: lato; font-weight:500;" class="list-collapse accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-<?= $kategori_item->id_kategori ?>" aria-expanded="false" aria-controls="flush-collapseOne">
                                                         <?= $kategori_item->nama_kategori ?>
                                                         <!-- <i class="fa fa-angle-down iconpanah"></i> -->
                                                     </a>
@@ -391,9 +460,9 @@
                                                         <div class="accordion-body">
                                                             <?php foreach ($kategori as $subkategori) :
                                                                 if ($subkategori->id_kategori == $kategori_item->id_kategori) : ?>
-                                                                    <a class="dropdown-item" href="<?= base_url('Katalog?id_kategori=' . $subkategori->id_kategori) ?>&nama_kategori=<?= $subkategori->nama_kategori ?>&id_subkategori=<?= $subkategori->id_subkategori ?>&nama_subkategori=<?= $subkategori->nama_subkategori ?>">
+                                                                    <a class="dropdown-item" style="font-family: lato; font-weight:300;" href="<?= base_url('Katalog?id_kategori=' . $subkategori->id_kategori) ?>&nama_kategori=<?= $subkategori->nama_kategori ?>&id_subkategori=<?= $subkategori->id_subkategori ?>&nama_subkategori=<?= $subkategori->nama_subkategori ?>">
                                                                         <?= $subkategori->nama_subkategori ?>
-                                                                        <span>(<?= $subkategori->jml_notnull ?>)</span>
+                                                                        <span style="font-family: lato; font-weight:300;">(<?= $subkategori->jml_notnull ?>)</span>
                                                                     </a>
                                                             <?php endif;
                                                             endforeach; ?>
@@ -422,7 +491,7 @@
 
                             <div class=" sidebar-item tags">
                                 <h3 class="sidebar-title dftrkat">MERK</h3>
-                                <ul class="mt-3">
+                                <ul class="mt-3" style="font-family: lato; font-weight:500;">
                                     <?php foreach ($semuamerk as $listmerk) { ?>
                                         <li><a href="<?php echo base_url('Katalog?id_kategori=') . $this->input->get('id_kategori') . '&nama_kategori=' . $this->input->get('nama_kategori') . '&id_subkategori=' . $this->input->get('id_subkategori') .  '&nama_subkategori=' . $this->input->get('nama_subkategori') . '&id_merk=' . urlencode($listmerk->id_merk) . '&merk=' . urlencode($listmerk->nama_merk) ?>">
                                                 <?php echo $listmerk->nama_merk ?></a></li>
@@ -431,7 +500,7 @@
                             </div><!-- End sidebar tags-->
                         </div><!-- End Blog Sidebar -->
                     </div>
-                    <div class="col-md-9 portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+                    <div class="col-md-9 flex-tab portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
                         <div class="total justify-content-start" data-aos="fade-up" data-aos-delay="200">
                             <h6 class="total" id="jmltotalproduk"> Total: 80</h6>
                         </div>
@@ -507,8 +576,8 @@
                                                             </div>                                                            
                                                             <div class="namabrg">
                                                                 <p class="fontlato"><b>Rp ${harga}</b></p>
-                                                                <p class="itembrg">${value.nama_barang}</p>
-                                                                <p class="hrgstatus fontlato">                                                                    
+                                                                <p class="itembrg" style="font-family: lato; font-weight:300; font-size:15px;">${value.nama_barang}</p>
+                                                                <p class="hrgstatus" style="font-family: lato; font-weight:500; font-size:15px;">                                                                    
                                                                     <label class="jenisbrg">
                                                                         ${status}
                                                                     </label>
@@ -565,7 +634,7 @@
     <?php $this->load->view('footer'); ?>
     <!-- End Footer -->
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 

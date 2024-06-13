@@ -35,7 +35,7 @@ class KatalogModel extends CI_Model
         }
 
         if ($id_subkategori == "null") {
-            $this->db->like('tsub.id_subkategori', '000000000011', 'both');
+            "";
         } else {
             $this->db->like('tsub.id_subkategori', $id_subkategori, 'both');
         }
@@ -161,7 +161,7 @@ class KatalogModel extends CI_Model
         }
 
         if ($id_subkategori == "null") {
-            $this->db->like('tsub.id_subkategori', '000000000011', 'both');
+            "";
         } else {
             $this->db->like('tsub.id_subkategori', $id_subkategori, 'both');
         }

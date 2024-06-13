@@ -140,9 +140,9 @@
                 <div class="col-lg-7">
                     <h2>Siap Melayani Dengan Sepenuh Hati</h2>
                     <div class="our-story">
-                        <h4 style="font-family: lato medium;">Since 1979</h4>
-                        <h3 style="font-family: lato black;">Our Story</h3>
-                        <p style="font-family: lato; text-align: justify; ">Salah satu toko pertama yang hadir melayani penjualan bahan bangunan di Perumnas Banyumanik. Sedangkan Perumnas Banyumanik adalah proyek perumahan yang dibangun pada pertengahan dekade 1970an dan diresmikan oleh Presiden Soeharto pada tahun 1979.</p>
+                        <h4 style="font-family: lato; font-weight:700;">Since 1979</h4>
+                        <h3 style="font-family: lato; font-weight:900;">Our Story</h3>
+                        <p style="font-family: lato; font-weight:300; text-align: justify; ">Salah satu toko pertama yang hadir melayani penjualan bahan bangunan di Perumnas Banyumanik. Sedangkan Perumnas Banyumanik adalah proyek perumahan yang dibangun pada pertengahan dekade 1970an dan diresmikan oleh Presiden Soeharto pada tahun 1979.</p>
                         <ul>
                             <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
                             <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in</span></li>
@@ -176,7 +176,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="bi bi-house-fill flex-shrink-0"></i>
                         <div>
-                            <h4><a style="font-family: lato black;" href="" class="stretched-link">Toko Combo Putra</a></h4>
+                            <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Toko Combo Putra</a></h4>
                             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                         </div>
                     </div><!-- End Icon Box -->
@@ -184,7 +184,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-phone-vibrate-fill flex-shrink-0"></i>
                         <div>
-                            <h4><a style="font-family: lato black;" href="" class="stretched-link">Online Call</a></h4>
+                            <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online Call</a></h4>
                             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
                         </div>
                     </div><!-- End Icon Box -->
@@ -192,7 +192,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-messenger flex-shrink-0"></i>
                         <div>
-                            <h4><a style="font-family: lato black;" href="" class="stretched-link">Online Chat</a></h4>
+                            <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online Chat</a></h4>
                             <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
                         </div>
                     </div><!-- End Icon Box -->
@@ -200,7 +200,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-cart-check-fill flex-shrink-0"></i>
                         <div>
-                            <h4><a style="font-family: lato black;" href="" class="stretched-link">Online E-Comerce</a></h4>
+                            <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online E-Comerce</a></h4>
                             <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit non aspernatur odit amet. Et eligendi</p>
                         </div>
                     </div><!-- End Icon Box -->
@@ -221,7 +221,7 @@
 
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
-                <ul style="font-family: Lato Medium;" class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+                <ul style="font-family: Lato; font-weight:500" class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
                     <!-- <li data-filter=".filter-managemen" class="filter-active">All</li> -->
                     <li data-filter=".filter-managemen" class="filter-active">Managemen</li>
                     <li data-filter=".filter-admin">Admin</li>
@@ -280,9 +280,9 @@
                                     </div>
                                 </div>
                                 <div class="member-info text-center">
-                                    <h4 style="font-family: lato black;"><?php echo $teamku->nama_karyawan ?></h4>
-                                    <span style="font-family: lato;"><?php echo $teamku->nama_jabatan ?></span>
-                                    <p style="font-family: lato;">Aliquam iure quaerat voluptatem praesentium possimus unde</p>
+                                    <h4 style="font-family: lato; font-weight:700;"><?php echo $teamku->nama_karyawan ?></h4>
+                                    <span style="font-family: lato; font-weight:300;"><?php echo $teamku->nama_jabatan ?></span>
+                                    <p style="font-family: lato; font-weight:300;">Aliquam iure quaerat voluptatem praesentium possimus unde</p>
                                 </div>
                             </div><!-- End Team Member -->
 
@@ -448,7 +448,7 @@
         };
     </script>
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 

@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,6 +50,10 @@
 
     .contact .info-item i {
         border: 2px dotted #337ab7;
+    }
+
+    .button-send:hover {
+        background-color: red !important;
     }
 
     @media screen and (max-width: 430px) {
@@ -86,24 +91,24 @@
                     <div class="col-lg-6">
                         <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                             <i class="bi bi-map"></i>
-                            <h3>Alamat Toko</h3>
-                            <p class="center">Jl. Trunojoyo X No.2, Padangsari, Kec. Banyumanik, Kota Semarang, Jawa Tengah <br>50267</p>
+                            <h3 style="font-family: lato; font-weight:700;">Alamat Toko</h3>
+                            <p class="center" style="font-family: lato; font-weight:400;">Jl. Trunojoyo X No.2, Padangsari, Kec. Banyumanik, Kota Semarang, Jawa Tengah <br>50267</p>
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="info-item d-flex flex-column justify-content-center align-items-center height">
                             <i class="bi bi-envelope"></i>
-                            <h3>Email</h3>
-                            <p>comboputra@gmail.com</p>
+                            <h3 style="font-family: lato; font-weight:700;">Email</h3>
+                            <p style="font-family: lato; font-weight:400;">comboputra@gmail.com</p>
                         </div>
                     </div><!-- End Info Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="info-item  d-flex flex-column justify-content-center align-items-center height">
                             <i class="bi bi-telephone"></i>
-                            <h3>No. Telepon</h3>
-                            <p>0853-5747-2345 / (024) 747-2345</p>
+                            <h3 style="font-family: lato; font-weight:700;">No. Telepon</h3>
+                            <p style="font-family: lato; font-weight:400;">0853-5747-2345 / (024) 747-2345</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -120,32 +125,32 @@
                     <div class="col-lg-6">
                         <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                             <i class="bi bi-clock"></i>
-                            <h3>Jam Operasional</h3>
-                            <p class="center">Senin - Kamis : 07.30 am s/d 16.30 pm <br>Jumat : 07.30 am s/d 11.45 pm - 13.00 pm s/d 16.30 pm <br>Sabtu : 07.30 am s/d 16.30 pm <br>Minggu : Tutup</p>
+                            <h3 style="font-family: lato; font-weight:700;">Jam Operasional</h3>
+                            <p class="center" style="font-family: lato; font-weight:400;">Senin - Kamis : 07.30 am s/d 16.30 pm <br>Jumat : 07.30 am s/d 11.45 pm - 13.00 pm s/d 16.30 pm <br>Sabtu : 07.30 am s/d 16.30 pm <br>Minggu : Tutup</p>
                         </div>
                     </div><!-- End Info Item -->
                     <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="<?php echo base_url('application/views/forms/contact.php'); ?>" method="post" role="form" class="php-email-form">
                             <div class="row gy-4">
                                 <div class="col-lg-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                <input style="font-family: lato; font-weight:300; font-size:15px" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea style="font-family: lato; font-weight:300; font-size:15px" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                             </div>
-                            <div class="my-3">
+                            <div style="font-family: lato; font-weight:300; font-size:14px" class=" my-3">
                                 <div class="loading">Loading</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button class="button-send" style="font-family: lato; font-weight:700; font-size:18px" type="submit">Send Message</button></div>
                         </form>
                     </div><!-- End Contact Form -->
 
@@ -159,7 +164,7 @@
     <!-- ======= Footer ======= -->
     <?php $this->load->view('footer'); ?>
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 

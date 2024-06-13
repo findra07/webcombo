@@ -41,21 +41,6 @@
 </head>
 
 <style>
-    @font-face {
-        font-family: 'Lato';
-        src: url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-    }
-
-    @font-face {
-        font-family: 'Lato Black';
-        src: url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-    }
-
-    @font-face {
-        font-family: 'Lato Medium';
-        src: url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-    }
-
     .hero .info h2 {
         font-size: 80px;
     }
@@ -197,8 +182,7 @@
     }
 
 
-
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1180px) {
         .tren-slideview {
             display: none;
         }
@@ -214,6 +198,13 @@
             width: 15.15%;
             margin: 10px 7px;
             height: 360px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        .merk-tab {
+            height: auto !important;
         }
     }
 
@@ -442,7 +433,7 @@
         }
 
         .recent-blog-posts .post-item .post-title {
-            font-size: 15px;
+            font-size: 13px;
         }
 
         .recent-blog-posts .post-item .meta span {
@@ -571,6 +562,15 @@
             font-size: 14px !important;
         }
     }
+
+    .border-produk {
+        border: 0.5px solid rgba(82, 86, 94, 0.3);
+        border-radius: 5px;
+    }
+
+    .border-produk:hover {
+        border: 1px solid #337ab7;
+    }
 </style>
 
 <body>
@@ -587,7 +587,7 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="tittle1" data-aos="fade-down">COMBO PUTRA <br><span class="tittlecombo">Solusi Bahan Bangunan Anda</span></h2>
                         <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a data-aos="fade-up" data-aos-delay="200" href="<?php echo base_url('Katalog') ?>" class="btn-get-started" style="font-family: lato black;">Cari Barang</a>
+                        <a data-aos="fade-up" data-aos-delay="200" href="<?php echo base_url('Katalog') ?>" class="btn-get-started" style="font-family: lato; font-weight:700; font-size:20px; padding: 8px 30px; border-radius:8px">Cari Barang</a>
                     </div>
                 </div>
             </div>
@@ -645,9 +645,9 @@
 
                                 <div class="post-content d-flex flex-column">
 
-                                    <h3 class="post-title" style="font-family: Lato Black;  font-size: 16px;"><?php echo $tren->nama_barang ?></h3>
+                                    <h3 class="post-title" style="font-family: Lato; font-weight:700;  font-size: 16px;"><?php echo $tren->nama_barang ?></h3>
 
-                                    <div class="meta align-items-center" style="font-family: Lato Medium;">
+                                    <div class="meta align-items-center" style="font-family: Lato; font-weight:300;">
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-tags-fill"></i> <span class="ps-2"><?php echo $tren->nama_kategori ?></span>
                                         </div>
@@ -659,7 +659,7 @@
 
                                     <hr>
 
-                                    <a style="font-family: Lato Heavy;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tren->id_barang; ?>" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                                    <a style="font-family: Lato; font-weight:900;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tren->id_barang; ?>" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
                                 </div>
 
@@ -702,9 +702,9 @@
                                         </div>
                                         <div class="post-content d-flex flex-column">
 
-                                            <h3 class="post-title" style="font-family: Lato Black;"><?php echo $tren->nama_barang ?></h3>
+                                            <h3 class="post-title" style="font-family: Lato; font-weight:700;"><?php echo $tren->nama_barang ?></h3>
 
-                                            <div class="meta align-items-center" style="font-family: Lato Medium;">
+                                            <div class="meta align-items-center" style="font-family: Lato; font-weight:300;">
                                                 <div class="d-flex align-items-center">
                                                     <i class="bi bi-tags-fill"></i> <span class="ps-2"><?php echo $tren->nama_kategori ?></span>
                                                 </div>
@@ -716,7 +716,7 @@
 
                                             <hr>
 
-                                            <a style="font-family: Lato Heavy;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tren->id_barang; ?>" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                                            <a style="font-family: Lato; font-weight:900;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tren->id_barang; ?>" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                                         </div>
 
                                     </div>
@@ -741,7 +741,7 @@
                             <i class="bi bi-tags color-blue flex-shrink-0"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="<?php echo $jml_penjualan->jml ?>" data-purecounter-duration="1" class="purecounter"></span>
-                                <p style="font-family: lato;">Penjualan Hari Ini </p>
+                                <p style="font-family: lato; font-weight:300;">Penjualan Hari Ini </p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -751,7 +751,7 @@
                             <i class="bi bi-truck color-orange flex-shrink-0"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="<?php echo $jml_pengiriman->jml ?>" data-purecounter-duration="1" class="purecounter"></span>
-                                <p style="font-family: lato;">Pengiriman Hari Ini</p>
+                                <p style="font-family: lato; font-weight:300;">Pengiriman Hari Ini</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -761,7 +761,7 @@
                             <i class="bi bi-headset color-green flex-shrink-0"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                                <p style="font-family: lato;">Hours Of Support</p>
+                                <p style="font-family: lato; font-weight:300;">Hours Of Support</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -771,7 +771,7 @@
                             <i class="bi bi-people color-pink flex-shrink-0"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="<?php echo $today_visit_count; ?>" data-purecounter-duration="1" class="purecounter"></span>
-                                <p style="font-family: lato;">Kunjungan Web Hari Ini</p>
+                                <p style="font-family: lato; font-weight:300;">Kunjungan Web Hari Ini</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -804,14 +804,14 @@
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
                                     <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection1 ?>" width="130px" height="130px" alt=""></i>
                                     <div>
-                                        <h4><a class="flex-harga" style="font-family: Lato Black;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil->harga_jual) ?></a></h4>
-                                        <p style="font-family: Lato; font-size: 15px;"><?php echo $tampil->nama_barang ?></p>
+                                        <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil->harga_jual) ?></a></h4>
+                                        <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
 
                         </div>
-                        <div class="row flex-tampilsmall">
+                        <div class="row flex-tampilsmall" style="--bs-gutter-x: 0.5rem; margin-top: calc(-1* var(--bs-gutter-y));">
                             <?php foreach ($section1 as $tampil) { ?>
                                 <?php
                                 if ($tampil->nama_foto_barang !== null) {
@@ -821,12 +821,12 @@
                                 }
                                 ?>
 
-                                <div style="margin-top: 30px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <div style="border: 0.5px solid rgba(82, 86, 94, 0.3); border-radius: 5px;">
-                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="padding: 2%;" src="<?php echo $fotosection1 ?>" width="130px" height="130px" alt=""></i>
+                                <div style="margin-top: 15px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="border-produk">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="" src="<?php echo $fotosection1 ?>" width="130px" height="130px" alt=""></i>
 
-                                        <h4 style="margin: 0 10%; font-family: Lato Black;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil->harga_jual) ?></a></h4>
-                                        <p style="margin: 5% 10%; font-family: Lato; font-size: 15px; line-height: 21px;"><?php echo $tampil->nama_barang ?></p>
+                                        <h4 style="margin: 0 10%; font-family: Lato; font-weight:500;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil->harga_jual) ?></a></h4>
+                                        <p style="margin: 5% 10%; font-family: Lato; font-weight:300; font-size: 15px; line-height: 21px;"><?php echo $tampil->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
@@ -869,15 +869,15 @@
                                 ?>
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
                                     <div style="text-align: right;">
-                                        <h4><a class="flex-harga" style="font-family: Lato Black;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil2->harga_jual) ?></a></h4>
-                                        <p style="font-family: Lato; font-size: 15px;"><?php echo $tampil2->nama_barang ?></p>
+                                        <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil2->harga_jual) ?></a></h4>
+                                        <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil2->nama_barang ?></p>
                                     </div>
                                     <i class="bi flex-shrink-0 " style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection2 ?>" width="130px" height="130px" alt=""></i>
 
                                 </div><!-- End Icon Box -->
                             <?php } ?>
                         </div>
-                        <div class="row flex-tampilsmall">
+                        <div class="row flex-tampilsmall" style="--bs-gutter-x: 0.5rem; margin-top: calc(-1* var(--bs-gutter-y));">
                             <?php foreach ($section2 as $tampil2) { ?>
                                 <?php
                                 if ($tampil2->nama_foto_barang !== null) {
@@ -886,12 +886,12 @@
                                     $fotosection2 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
                                 ?>
-                                <div style="margin-top: 30px; width:50%;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <div style="text-align: right; border: 0.5px solid rgba(82, 86, 94, 0.3); border-radius: 5px;">
-                                        <i class="bi flex-shrink-0 " style="width:130px; height:130px; margin-left:15px; margin: 5% auto 10%;"><img style="padding: 2%;" src="<?php echo $fotosection2 ?>" width="130px" height="130px" alt=""></i>
+                                <div style="margin-top: 15px; width:50%;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
+                                    <div style="text-align: right;" class="border-produk">
+                                        <i class="bi flex-shrink-0 " style="width:130px; height:130px; margin-left:15px; margin: 5% auto 10%;"><img style="" src="<?php echo $fotosection2 ?>" width="130px" height="130px" alt=""></i>
 
-                                        <h4 style="margin: 0 10%; font-family: Lato Black; text-align: left;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil2->harga_jual) ?></a></h4>
-                                        <p style="margin: 5% 10%; font-family: Lato; font-size: 15px; line-height: 21px; text-align: left;"><?php echo $tampil2->nama_barang ?></p>
+                                        <h4 style="margin: 0 10%; font-family: Lato; font-weight:500; text-align: left;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil2->harga_jual) ?></a></h4>
+                                        <p style="margin: 5% 10%; font-family: Lato; font-weight:300; font-size: 15px; line-height: 21px; text-align: left;"><?php echo $tampil2->nama_barang ?></p>
 
                                     </div>
                                 </div><!-- End Icon Box -->
@@ -935,13 +935,13 @@
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
                                     <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection3 ?>" width="130px" height="130px" alt=""></i>
                                     <div>
-                                        <h4><a class="flex-harga" style="font-family: Lato Black;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil3->harga_jual) ?></a></h4>
-                                        <p style="font-family: Lato; font-size: 15px;"><?php echo $tampil3->nama_barang ?></p>
+                                        <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil3->harga_jual) ?></a></h4>
+                                        <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil3->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
                         </div>
-                        <div class="row flex-tampilsmall">
+                        <div class="row flex-tampilsmall" style="--bs-gutter-x: 0.5rem; margin-top: calc(-1* var(--bs-gutter-y));">
                             <?php foreach ($section3 as $tampil3) { ?>
                                 <?php
                                 if ($tampil3->nama_foto_barang !== null) {
@@ -951,12 +951,12 @@
                                 }
                                 ?>
 
-                                <div style="margin-top: 30px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <div style="border: 0.5px solid rgba(82, 86, 94, 0.3); border-radius: 5px;">
-                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="padding: 2%;" src="<?php echo $fotosection3 ?>" width="130px" height="130px" alt=""></i>
+                                <div style="margin-top: 15px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="border-produk">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="" src="<?php echo $fotosection3 ?>" width="130px" height="130px" alt=""></i>
 
-                                        <h4 style="margin: 0 10%; font-family: Lato Black;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil3->harga_jual) ?></a></h4>
-                                        <p style="margin: 5% 10%; font-family: Lato; font-size: 15px; line-height: 21px;"><?php echo $tampil3->nama_barang ?></p>
+                                        <h4 style="margin: 0 10%; font-family: Lato; font-weight:500;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil3->harga_jual) ?></a></h4>
+                                        <p style="margin: 5% 10%; font-family: Lato; font-weight:300; font-size: 15px; line-height: 21px;"><?php echo $tampil3->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
@@ -1002,8 +1002,8 @@
 
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
                                     <div style="text-align: right;">
-                                        <h4><a class="flex-harga" style="font-family: Lato Black;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil4->harga_jual) ?></a></h4>
-                                        <p style="font-family: Lato; font-size: 15px;"><?php echo $tampil4->nama_barang ?></p>
+                                        <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil4->harga_jual) ?></a></h4>
+                                        <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil4->nama_barang ?></p>
                                     </div>
                                     <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection4 ?>" width="130px" height="130px" alt=""></i>
 
@@ -1011,7 +1011,7 @@
                             <?php } ?>
 
                         </div>
-                        <div class="row flex-tampilsmall">
+                        <div class="row flex-tampilsmall" style="--bs-gutter-x: 0.5rem; margin-top: calc(-1* var(--bs-gutter-y));">
                             <?php foreach ($section4 as $tampil4) { ?>
                                 <?php
                                 if ($tampil4->nama_foto_barang !== null) {
@@ -1021,12 +1021,12 @@
                                 }
                                 ?>
 
-                                <div style="margin-top: 30px; width:50%;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <div style="text-align: right; border: 0.5px solid rgba(82, 86, 94, 0.3); border-radius: 5px;">
-                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-left:15px; margin: 5% auto 10%;"><img style="padding: 2%;" src="<?php echo $fotosection4 ?>" width="130px" height="130px" alt=""></i>
+                                <div style="margin-top: 15px; width:50%;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
+                                    <div style="text-align: right;" class="border-produk">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-left:15px; margin: 5% auto 10%;"><img style="" src="<?php echo $fotosection4 ?>" width="130px" height="130px" alt=""></i>
 
-                                        <h4 style="margin: 0 10%; font-family: Lato Black; text-align: left;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil4->harga_jual) ?></a></h4>
-                                        <p style="margin: 5% 10%; font-family: Lato; font-size: 15px; line-height: 21px; text-align: left;"><?php echo $tampil4->nama_barang ?></p>
+                                        <h4 style="margin: 0 10%; font-family: Lato; font-weight:500; text-align: left;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil4->harga_jual) ?></a></h4>
+                                        <p style="margin: 5% 10%; font-family: Lato; font-weight:300; font-size: 15px; line-height: 21px; text-align: left;"><?php echo $tampil4->nama_barang ?></p>
 
                                     </div>
                                 </div><!-- End Icon Box -->
@@ -1071,14 +1071,14 @@
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
                                     <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection5 ?>" width="130px" height="130px" alt=""></i>
                                     <div>
-                                        <h4><a class="flex-harga" style="font-family: Lato Black;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil5->harga_jual) ?></a></h4>
-                                        <p style="font-family: Lato; font-size: 15px;"><?php echo $tampil5->nama_barang ?></p>
+                                        <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil5->harga_jual) ?></a></h4>
+                                        <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil5->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
 
                         </div>
-                        <div class="row flex-tampilsmall">
+                        <div class="row flex-tampilsmall" style="--bs-gutter-x: 0.5rem; margin-top: calc(-1* var(--bs-gutter-y));">
                             <?php foreach ($section5 as $tampil5) { ?>
                                 <?php
                                 if ($tampil5->nama_foto_barang !== null) {
@@ -1088,12 +1088,12 @@
                                 }
                                 ?>
 
-                                <div style="margin-top: 30px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <div style="border: 0.5px solid rgba(82, 86, 94, 0.3); border-radius: 5px;">
-                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="padding: 2%;" src="<?php echo $fotosection5 ?>" width="130px" height="130px" alt=""></i>
+                                <div style="margin-top: 15px; width:50%;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="border-produk">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px; margin: 5% auto 10%;"><img style="" src="<?php echo $fotosection5 ?>" width="130px" height="130px" alt=""></i>
 
-                                        <h4 style="margin: 0 10%; font-family: Lato Black;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil5->harga_jual) ?></a></h4>
-                                        <p style="margin: 5% 10%; font-family: Lato; font-size: 15px; line-height: 21px;"><?php echo $tampil5->nama_barang ?></p>
+                                        <h4 style="margin: 0 10%; font-family: Lato; font-weight:500;"><a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil5->harga_jual) ?></a></h4>
+                                        <p style="margin: 5% 10%; font-family: Lato; font-weight:300; font-size: 15px; line-height: 21px;"><?php echo $tampil5->nama_barang ?></p>
                                     </div>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
@@ -1214,14 +1214,14 @@
                                                 </div>
 
                                                 <div class="post-content d-flex flex-column">
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbydulux->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbydulux->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%;" class="">Rp <?php echo number_format($catbydulux->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000;" class="">Rp <?php echo number_format($catbydulux->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="" class="statusstok"><?php echo $stok ?> </span>
+                                                            <i class=""></i> <span style="font-family: lato; font-weight:300; color: #364d59;" class="statusstok"><?php echo $stok ?> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1274,14 +1274,14 @@
                                                 </div>
                                                 <div class="post-content d-flex flex-column">
 
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbyavian->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbyavian->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%;" class="">Rp <?php echo number_format($catbyavian->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000;" class="">Rp <?php echo number_format($catbyavian->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="" class="statusstok"><?php echo $stok ?> </span>
+                                                            <i class=""></i> <span style="font-family: lato; font-weight:300; color: #364d59;" class="statusstok"><?php echo $stok ?> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1335,14 +1335,14 @@
                                                 </div>
                                                 <div class="post-content d-flex flex-column">
 
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbyjotun->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbyjotun->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%;" class="">Rp <?php echo number_format($catbyjotun->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000;" class="">Rp <?php echo number_format($catbyjotun->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="" class="statusstok"><?php echo $stok ?> </span>
+                                                            <i class=""></i> <span style="font-family: lato; font-weight:300; color: #364d59;" class="statusstok"><?php echo $stok ?> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1396,14 +1396,14 @@
                                                 </div>
                                                 <div class="post-content d-flex flex-column">
 
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbypropan->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbypropan->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%;" class="">Rp <?php echo number_format($catbypropan->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000;" class="">Rp <?php echo number_format($catbypropan->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="" class="statusstok"><?php echo $stok ?> </span>
+                                                            <i class=""></i> <span style="font-family: lato; font-weight:300; color: #364d59;" class="statusstok"><?php echo $stok ?> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1455,14 +1455,14 @@
                                                 </div>
                                                 <div class="post-content d-flex flex-column">
 
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbynippon->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbynippon->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%;" class="">Rp <?php echo number_format($catbynippon->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000;" class="">Rp <?php echo number_format($catbynippon->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="" class="statusstok"><?php echo $stok ?> </span>
+                                                            <i class=""></i> <span style="font-family: lato; font-weight:300; color: #364d59;" class="statusstok"><?php echo $stok ?> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1514,11 +1514,11 @@
                                                 </div>
                                                 <div class="post-content d-flex flex-column">
 
-                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato medium;" class="post-title"><?php echo $catbypremio->nama_barang ?></h3>
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbypremio->nama_barang ?></h3>
                                                     <hr style="margin-bottom: 10px;">
                                                     <div class="meta align-items-center">
                                                         <div class="d-flex align-items-center">
-                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; " class="">Rp <?php echo number_format($catbypremio->harga_jual) ?> </span>
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbypremio->harga_jual) ?> </span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
                                                             <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
@@ -1531,7 +1531,7 @@
                                     <?php } ?>
                                     <div data-aos="fade-up" data-aos-delay="100">
                                         <a href="<?php echo base_url('Katalog?id_kategori=') . $catbypremio->id_kategori . '&nama_kategori=' . $catbypremio->nama_kategori . '&id_subkategori=' . $catbypremio->id_subkategori . '&nama_subkategori=' . $catbypremio->nama_subkategori . '&id_merk=' . $catbypremio->id_merk . '&merk=' . $catbypremio->nama_merk ?>">
-                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                            <p class="btncatbymerk"><i style="font-family: lato; font-weight:300; color: #364d59;" class="bi-palette2"> Tampilkan Semua</i></p>
                                         </a>
                                     </div>
                                 </div>
@@ -1559,16 +1559,19 @@
                         <div class="swiper-wrapper align-items-center" style="padding-left: 0%;">
 
                             <div class="swiper-slide">
-                                <img class="merk-slide" src="assets/img/projects/ace.jpg" alt="">
+                                <a href="<?php echo base_url('Katalog?id_merk=000000000326&merk=Ace Oldfields'); ?>"><img class="merk-slide" src="assets/img/projects/ace.png" alt=""></a>
                             </div>
                             <div class="swiper-slide">
-                                <img class="merk-slide" src="assets/img/projects/sika.jpg" alt="">
+                                <a href="<?php echo base_url('Katalog?id_merk=000000000004&merk=Dynamix'); ?>"><img class="merk-slide" src="assets/img/projects/dynamix.png" alt=""></a>
                             </div>
                             <div class="swiper-slide">
-                                <img class="merk-slide" src="assets/img/projects/tekiro.png" alt="">
+                                <a href="<?php echo base_url('Katalog?id_merk=000000000174&merk=Toho'); ?>"><img class="merk-slide" src="assets/img/projects/toho.png" alt=""></a>
                             </div>
                             <div class="swiper-slide">
-                                <img class="merk-slide" src="assets/img/projects/amstard.jpg" alt="">
+                                <a href="<?php echo base_url('Katalog?id_merk=000000000009&merk=Sika'); ?>"><img class="merk-slide" src="assets/img/projects/sika.png" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="<?php echo base_url('Katalog?id_merk=000000000169&merk=Tekiro'); ?>"><img class="merk-slide" src="assets/img/projects/tekiro2.png" alt=""></a>
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -1581,25 +1584,19 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <a href="<?php echo base_url('Katalog?id_merk=000000000151&merk=Bosch'); ?>"><img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/bosch.jpg" alt=""></a>
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000151&merk=Bosch'); ?>"><img src="assets/img/projects/bosch2.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/wasser.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000355&merk=Dekson'); ?>"><img src="assets/img/projects/dekson2.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/onda.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000163&merk=Shimizu'); ?>"><img src="assets/img/projects/shimizu.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/dekson.png" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000137&merk=Platinum'); ?>"><img src="assets/img/projects/platinum2.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/remodeling-1.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/remodeling-1.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img style=" width: 100%; height: -webkit-fill-available" src="assets/img/projects/remodeling-1.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000012&merk=Lemkra'); ?>"><img src="assets/img/projects/lemkra2.png" alt=""></a>
                                 </div>
 
                             </div>
@@ -1611,17 +1608,18 @@
                         <div class="slides-1 portfolio-details-slider swiper col-lg-12" style="height: 48%; border-radius: 5px;">
                             <div class="swiper-wrapper align-items-center">
 
+
                                 <div class="swiper-slide" style="width: 51%;">
-                                    <img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px;" src=" assets/img/projects/rucika.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000419&merk=Rucika'); ?>"><img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px; " src=" assets/img/projects/rucika.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide" style="width: 51%;">
-                                    <img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px; " src=" assets/img/projects/penguin.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000442&merk=Turtle Wax'); ?>"><img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px;" src=" assets/img/projects/turtle.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide" style="width: 51%;">
-                                    <img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px;" src=" assets/img/projects/dolomite.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000154&merk=Onda'); ?>"><img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px;" src=" assets/img/projects/onda2.png" alt=""></a>
                                 </div>
                                 <div class="swiper-slide" style="width: 51%;">
-                                    <img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px; " src=" assets/img/projects/design-1.jpg" alt="">
+                                    <a href="<?php echo base_url('Katalog?id_merk=000000000296&merk=Alderon'); ?>"><img class="flex-merk" style="width: 98%; height: 100%; border-radius: 5px; " src=" assets/img/projects/alderon.png" alt=""></a>
                                 </div>
                             </div>
 
@@ -1753,7 +1751,7 @@
     <?php $this->load->view('footer'); ?>
     <!-- End Footer -->
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 

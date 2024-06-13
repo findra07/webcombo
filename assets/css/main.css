@@ -173,7 +173,7 @@ section {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
+  bottom: 60px;
   z-index: 99999;
   background: var(--color-primary);
   width: 40px;
@@ -189,14 +189,16 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ffc732;
-  color: #fff;
+  /* background: #ffc732; */
+  /* color: #fff; */
+  color: #ffc732;
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
 }
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -1655,13 +1657,13 @@ section {
   font-size: 20px;
   color: #6c757d;
   font-weight: 700;
-  margin: 10px 0;
+  margin: 10px 0 5px;
 }
 
 .contact .info-item p {
   padding: 0;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 0;
 }
 

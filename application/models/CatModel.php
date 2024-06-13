@@ -178,7 +178,7 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000300') 
+        WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000300') 
         ORDER BY `ts`.`stok_jual` DESC 
         LIMIT 3")->result();
 

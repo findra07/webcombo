@@ -17,10 +17,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
     <!-- Vendor CSS Files -->
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -49,7 +47,8 @@
     }
 
     .service-details .hrgproduk {
-        font-weight: 500;
+        font-family: lato;
+        font-weight: 700;
         font-size: 150%;
     }
 
@@ -74,8 +73,8 @@
         border-radius: 5px;
         /* border: 0.5px solid black; */
         width: 180px;
-        font-size: 14px !important;
-        font-family: Open Sans !important;
+        font-size: 15px !important;
+        font-family: lato !important;
         font-weight: 500;
         /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.06); */
         float: inline-start;
@@ -94,6 +93,12 @@
     @media screen and (max-width: 430px) {
         .breadcrumbs h2 {
             font-size: 48px;
+        }
+    }
+
+    @media screen and (max-width: 1366px) {
+        .btnbackkatalog {
+            margin-top: 12%;
         }
     }
 </style>
@@ -153,7 +158,7 @@
                     </div>
                     <div class="col-lg-6">
 
-                        <h1><?php echo $detail->nama_barang ?></h1>
+                        <h1 style="font-family: lato; font-weight:900;"><?php echo $detail->nama_barang ?></h1>
                         <p class="hrgproduk">
                             Rp <?php echo number_format($detail->harga_jual) ?>
                         </p>
@@ -162,13 +167,13 @@
 
                             <!-- <a href="#" class="active">Remodeling</a> -->
                             <!-- <a href="#">Construction</a> -->
-                            <a href="<?php echo base_url('Katalog?id_kategori=') . $detail->id_kategori . '&nama_kategori=' . $detail->nama_kategori . '&id_subkategori=' . $detail->id_subkategori . '&nama_subkategori=' . $detail->nama_subkategori ?>">Kategori &nbsp : &nbsp<?php echo $detail->nama_kategori ?> -
+                            <a style="font-family: lato; font-weight:500; font-size:18px;" href="<?php echo base_url('Katalog?id_kategori=') . $detail->id_kategori . '&nama_kategori=' . $detail->nama_kategori . '&id_subkategori=' . $detail->id_subkategori . '&nama_subkategori=' . $detail->nama_subkategori ?>">Kategori &nbsp : &nbsp<?php echo $detail->nama_kategori ?> -
                                 <?php echo $detail->nama_subkategori ?></a>
-                            <a href="<?php echo base_url('Katalog?id_kategori=') . $detail->id_kategori . '&nama_kategori=' . $detail->nama_kategori . '&id_subkategori=' . $detail->id_subkategori . '&nama_subkategori=' . $detail->nama_subkategori . '&id_merk=' . $detail->id_merk . '&merk=' . $detail->nama_merk ?>">Merk &nbsp; &nbsp; &nbsp; &nbsp : &nbsp<?php echo $detail->nama_merk ?></a>
+                            <a style="font-family: lato; font-weight:500; font-size:18px;" href="<?php echo base_url('Katalog?id_kategori=') . $detail->id_kategori . '&nama_kategori=' . $detail->nama_kategori . '&id_subkategori=' . $detail->id_subkategori . '&nama_subkategori=' . $detail->nama_subkategori . '&id_merk=' . $detail->id_merk . '&merk=' . $detail->nama_merk ?>">Merk &nbsp; &nbsp; &nbsp; &nbsp; &nbsp: &nbsp<?php echo $detail->nama_merk ?></a>
                         </div>
 
                         <div class="detail">
-                            <h4>Detail Produk</h4>
+                            <h4 style="font-family: lato; font-weight:700; font-size:20px;">Detail Produk</h4>
                             <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
                             <ul>
                                 <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
@@ -210,7 +215,7 @@
     <?php $this->load->view('footer'); ?>
     <!-- End Footer -->
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <?php $this->load->view('scroll'); ?>
 
     <div id="preloader"></div>
 
