@@ -755,23 +755,21 @@
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item d-flex align-items-center w-100 h-100">
-                            <i class="bi bi-headset color-green flex-shrink-0"></i>
-                            <div>
-                                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                                <p style="font-family: lato; font-weight:300;">Hours Of Support</p>
-                            </div>
-                        </div>
-                    </div><!-- End Stats Item -->
-
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
                             <i class="bi bi-people color-pink flex-shrink-0"></i>
                             <div>
                                 <span data-purecounter-start="0" data-purecounter-end="<?php echo $today_visit_count; ?>" data-purecounter-duration="1" class="purecounter"></span>
                                 <p style="font-family: lato; font-weight:300;">Kunjungan Web Hari Ini</p>
+                            </div>
+                        </div>
+                    </div><!-- End Stats Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item d-flex align-items-center w-100 h-100">
+                            <i class="bi bi-journal-bookmark color-green flex-shrink-0"></i>
+                            <div>
+                                <span data-purecounter-start="0" data-purecounter-end="<?php echo $jml_kritiksaran->jml ?>" data-purecounter-duration="1" class="purecounter"></span>
+                                <p style="font-family: lato; font-weight:300;">Kritik & Saran Hari ini</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->

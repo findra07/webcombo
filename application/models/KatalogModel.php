@@ -314,6 +314,13 @@ class KatalogModel extends CI_Model
 
         return $data;
     }
+
+    public function jml_kritiksaran()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jml FROM visits_sendmail WHERE date(submitted_at) = CURRENT_DATE()")->row();
+
+        return $data;
+    }
 }
 
 /* End of file KatalogModel.php */

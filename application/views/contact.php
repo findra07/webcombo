@@ -56,6 +56,39 @@
         background-color: red !important;
     }
 
+    .contact .form-send {
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+        padding: 30px;
+    }
+
+    .contact .form-send .form-group {
+        padding-bottom: 20px;
+    }
+
+    .contact .form-send input {
+        height: 44px;
+    }
+
+    .form-control {
+        border-radius: 3px !important;
+    }
+
+    .contact .form-send button[type=submit] {
+        background: #337ab7;
+        border: 0;
+        padding: 10px 35px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 5px;
+    }
+
+    .form-control:focus {
+        border: #337ab7 solid 0.5px;
+        box-shadow: none !important;
+    }
+
     @media screen and (max-width: 430px) {
         .breadcrumbs h2 {
             font-size: 50px;
@@ -130,28 +163,27 @@
                         </div>
                     </div><!-- End Info Item -->
                     <div class="col-lg-6">
-                        <form action="<?php echo base_url('application/views/forms/contact.php'); ?>" method="post" role="form" class="php-email-form">
+                        <form action="<?php echo base_url('contact') ?>" method="post" role="form" class="form-send">
                             <div class="row gy-4">
                                 <div class="col-lg-6 form-group">
-                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="text" name="name" class="form-control" id="name" placeholder="Nama Anda" required>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                    <input style="font-family: lato; font-weight:300; font-size:15px" type="email" class="form-control" name="email" id="email" placeholder="Email Anda" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input style="font-family: lato; font-weight:300; font-size:15px" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
-                                <textarea style="font-family: lato; font-weight:300; font-size:15px" class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea style="font-family: lato; font-weight:300; font-size:15px" class="form-control" name="message" rows="5" placeholder="Pesan" required></textarea>
                             </div>
-                            <div style="font-family: lato; font-weight:300; font-size:14px" class=" my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="text-center">
+                                <button class="button-send" style="font-family: lato; font-weight:700; font-size:16px" type="submit">Send Message</button>
                             </div>
-                            <div class="text-center"><button class="button-send" style="font-family: lato; font-weight:700; font-size:18px" type="submit">Send Message</button></div>
+
                         </form>
+
                     </div><!-- End Contact Form -->
 
                 </div>

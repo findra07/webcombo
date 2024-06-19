@@ -1,4 +1,10 @@
 RewriteEngine On
+RewriteBase /katalog/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
+
+<RequireAll>
+  Require all granted
+  Require not ip 2a02:4780:3:c071::40
+</RequireAll>

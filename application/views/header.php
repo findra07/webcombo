@@ -4,6 +4,14 @@
             max-height: 25px;
         }
     }
+
+    .list-gall:hover {
+        background-color: #337ab7;
+    }
+
+    .tittle-gall:hover {
+        color: white !important;
+    }
 </style>
 
 
@@ -25,11 +33,11 @@
                 <li><a href="<?php echo base_url('Katalog') ?>" class="">Produk</a></li>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
-                        <li><a href="<?php echo base_url('Gallery') ?>">Outbond</a></li>
-                        <li class="dropdown"><a href="#"><span>Combo Putra</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <li class="list-gall"><a class="tittle-gall" href="<?php echo base_url('Gallery') ?>">Outbond</a></li>
+                        <li class="dropdown list-gall"><a class="tittle-gall" href="#"><span>Combo Putra</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
-                                <li><a href="#">17 Agustus</a></li>
-                                <li><a href="#">Iduk Fitri</a></li>
+                                <li class="list-gall"><a class="tittle-gall" href="#">17 Agustus</a></li>
+                                <li class="list-gall"><a class="tittle-gall" href="#">Iduk Fitri</a></li>
                                 <!-- <li><a href="#">Deep Dropdown 3</a></li> -->
                                 <!-- <li><a href="#">Deep Dropdown 4</a></li> -->
                                 <!-- <li><a href="#">Deep Dropdown 5</a></li> -->

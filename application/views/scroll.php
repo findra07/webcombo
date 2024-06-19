@@ -18,6 +18,10 @@
         background: var(--color-primary);
         color: black;
     }
+
+    .scroll-top i:hover {
+        color: #ffc107 !important;
+    }
 </style>
 
 

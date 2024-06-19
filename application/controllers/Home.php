@@ -35,6 +35,8 @@ class Home extends CI_Controller
 
         $data['jml_penjualan'] = $this->KatalogModel->jml_penjualan();
         $data['jml_pengiriman'] = $this->KatalogModel->jml_pengiriman();
+        $data['jml_kritiksaran'] = $this->KatalogModel->jml_kritiksaran();
+
 
         $this->VisitsModel->record_visit();
         $visit_count = $this->VisitsModel->get_visit_count();
