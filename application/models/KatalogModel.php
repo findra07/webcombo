@@ -321,6 +321,13 @@ class KatalogModel extends CI_Model
 
         return $data;
     }
+
+    public function total_penjualan()
+    {
+        $data = $this->db->query("SELECT *, sum(tabel_jual.total_jual) AS rupiah FROM `tabel_jual` WHERE date(tabel_jual.tanggal_jual) = CURRENT_DATE()")->row();
+
+        return $data;
+    }
 }
 
 /* End of file KatalogModel.php */
