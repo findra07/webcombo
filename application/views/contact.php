@@ -30,6 +30,8 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- =======================================================
   * Template Name: UpConstruction
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -93,6 +95,20 @@
         .breadcrumbs h2 {
             font-size: 50px;
         }
+    }
+
+    .btn-close {
+        float: inline-end;
+    }
+
+    .modal-dialog-centered {
+        align-items: baseline;
+        padding-top: 6%;
+    }
+
+    .alert-success {
+        --bs-alert-bg: var(--bs-primary-bg-subtle);
+
     }
 </style>
 
@@ -191,7 +207,45 @@
             </div>
         </section><!-- End Contact Section -->
 
+
     </main><!-- End #main -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">Pesan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                <div class="modal-body">
+                    <?php if ($this->session->flashdata('error')) : ?>
+                        <div class="alert alert-danger" style="font-family: lato; font-weight:300; font-size:15px" role="alert">
+                            <?php echo $this->session->flashdata('error'); ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" style="font-family: lato; font-weight:300; font-size:15px" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            <?php if ($this->session->flashdata('error') || $this->session->flashdata('success')) : ?>
+                var myModal = new bootstrap.Modal(document.getElementById('messageModal'));
+                myModal.show();
+            <?php endif; ?>
+        });
+    </script>
 
     <!-- ======= Footer ======= -->
     <?php $this->load->view('footer'); ?>

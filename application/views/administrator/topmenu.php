@@ -1,6 +1,12 @@
 <style>
     .app-brand {
-        margin-left: -6px;
+        /* margin-left: -6px; */
+        justify-content: center;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
     }
 </style>
 
@@ -113,7 +119,7 @@
             <div class="dropdown-menu dropdown-menu-end shadow">
                 <a class="dropdown-item d-flex align-items-center" href="profile.html"><i class="bi bi-person fs-4 me-2"></i>Profile</a>
                 <a class="dropdown-item d-flex align-items-center" href="settings.html"><i class="bi bi-gear fs-4 me-2"></i>Account Settings</a>
-                <a class="dropdown-item d-flex align-items-center" href="login.html"><i class="bi bi-escape fs-4 me-2"></i>Logout</a>
+                <a class="dropdown-item d-flex align-items-center" href="<?php echo base_url('Administrator') ?>"><i class="bi bi-escape fs-4 me-2"></i>Logout</a>
             </div>
         </div>
     </div>
@@ -135,6 +141,9 @@
         case 'rekap':
             $breadcrumb_title = 'Rekap Data';
             break;
+        case 'content':
+            $breadcrumb_title = 'Content';
+            break;
     }
     ?>
     <!-- Breadcrumb start -->
@@ -147,23 +156,6 @@
     </ol>
     <!-- Breadcrumb end -->
 
-    <?php
-    // Memastikan variabel $jmlnotajual terdefinisi sebelum digunakan
-    if (isset($jmlnotajual)) {
-        // Mengambil nilai rupiah dari $jmlnotajual jika tersedia
-        $tot_rp = isset($jmlnotajual->rupiah) ? $jmlnotajual->rupiah : '';
-
-        // Memeriksa apakah $tot_rp kosong atau tidak terdefinisi
-        if ($tot_rp === "") {
-            $rupiah = '0'; // Inisialisasi $rupiah dengan nilai 0 jika $tot_rp kosong
-        } else {
-            $rupiah = $tot_rp; // Menggunakan nilai $tot_rp jika tidak kosong
-        }
-    } else {
-        $rupiah = '0'; // Inisialisasi $rupiah dengan nilai 0 jika $jmlnotajual tidak terdefinisi
-    }
-    ?>
-
     <!-- Sales stats start -->
     <div class="ms-auto d-flex flex-row">
         <div class="d-flex flex-column me-5 text-end">
@@ -172,7 +164,7 @@
         </div>
         <div class="d-flex flex-column text-end">
             <p class="m-0 text-secondary">Penjualan Hari Ini</p>
-            <h3 class="m-0">Rp <?php echo $rupiah ?></h3>
+            <h3 class="m-0">Rp <?php echo number_format($jmlnotarupiah->rupiah) ?></h3>
         </div>
     </div>
     <!-- Sales stats end -->

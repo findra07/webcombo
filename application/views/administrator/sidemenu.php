@@ -4,6 +4,82 @@
         top: 17px;
         width: 10px;
     }
+
+    .sidebar-wrapper .sidebar-user-details {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar-wrapper .sidebar-user-details .user-profile {
+        padding: 10px 10px 25px 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    .sidebar-wrapper .sidebar-user-details .user-profile img.profile-thumb {
+        width: 90px;
+        height: 90px;
+        padding: 3px;
+        border: 1px solid white;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        box-shadow: 0 0 15px #000;
+        margin: 0 auto;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+    .page-wrapper.pinned .sidebar-wrapper .sidebar-user-details .user-profile img.profile-thumb {
+        width: 50px;
+        height: 50px;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+    .page-wrapper.sidebar-hovered .sidebar-wrapper .sidebar-user-details .user-profile img.profile-thumb {
+        width: 90px;
+        height: 90px;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+    .sidebar-wrapper .sidebar-user-details .user-profile h6.profile-name {
+        margin: 10px 0 0 0;
+        font-size: .8rem;
+        font-weight: 400;
+        color: #abaaaf;
+        max-width: 150px;
+    }
+
+    .page-wrapper.pinned .sidebar-wrapper .app-brand {
+        justify-content: left;
+        margin-left: -5px;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+    .page-wrapper.sidebar-hovered .sidebar-wrapper .app-brand {
+        justify-content: center;
+        /* margin-left: -5px; */
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
 </style>
 
 <nav id="sidebar" class="sidebar-wrapper">
@@ -15,6 +91,14 @@
         </a>
     </div>
     <!-- App brand ends -->
+
+    <div class="sidebar-user-details">
+        <div class="user-profile">
+            <img class="profile-thumb" src="<?php echo base_url('assets_admin/') ?>images/user.png" alt="">
+            <h6 class="profile-name"><?php echo $user->name; ?></h6>
+        </div>
+    </div>
+
 
     <!-- Sidebar profile actions starts -->
     <ul class="profile-actions d-lg-flex d-none">
@@ -117,13 +201,13 @@
                     </li>
                 </ul>
             </li> -->
-            <!-- <li class="treeview">
-                <a href="#!">
+            <li class="treeview menu-item <?php echo ($current_url == 'content') ? 'active' : ''; ?>">
+                <a href="">
                     <i class="bi bi-ui-checks-grid"></i>
-                    <span class="menu-text">Forms</span>
+                    <span class="menu-text">Content</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li>
+                    <!-- <li>
                         <a href="form-inputs.html">Form Inputs</a>
                     </li>
                     <li>
@@ -137,12 +221,12 @@
                     </li>
                     <li>
                         <a href="date-time-pickers.html">Date Time Pickers</a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="form-layouts.html">Form Layouts</a>
+                        <a href="<?php echo base_url('administrator/content') ?>">Background</a>
                     </li>
                 </ul>
-            </li> -->
+            </li>
             <!-- <li class="treeview">
                 <a href="#!">
                     <i class="bi bi-window-sidebar"></i>

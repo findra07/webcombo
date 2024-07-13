@@ -554,7 +554,7 @@
                                 let status;
 
                                 response.data.map((value, key) => {
-                                    gambar = value.nama_foto_barang === null ? 'https://sicora.comboputra.co.id/assets/images/o-redlogo.png' : `https://sicora.comboputra.co.id/assets/foto/barang/thumb/${value.nama_foto_barang}`;
+                                    gambar = value.nama_foto_barang === null ? 'https://sicora.comboputra.co.id/assets/images/o-redlogo.png' : `https://sicora.comboputra.co.id/assets/foto/barang/${value.nama_foto_barang}`;
                                     if (value.stok_update > 0) {
                                         status = "Ready"
                                     } else {

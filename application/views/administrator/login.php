@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin Templates - Dashboard Templates - Venus Admin Template</title>
+    <title>Combo Putra - Login</title>
 
     <!-- Meta -->
     <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
@@ -15,7 +15,10 @@
     <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
     <meta property="og:type" content="Website">
     <meta property="og:site_name" content="Bootstrap Gallery">
-    <link rel="shortcut icon" href="<?php echo base_url('assets_admin/') ?> images/favicon.svg" />
+    <!-- <link rel="shortcut icon" href="<?php echo base_url('assets_admin/') ?> images/favicon.svg" /> -->
+
+    <link href="<?php echo base_url('assets/') ?>img/combo-logo.png" rel="icon">
+    <link href="<?php echo base_url('assets/') ?>img/combo-logo.png" rel="apple-touch-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
@@ -133,13 +136,6 @@
                                     </a>
                                 </div>
                             </div>
-                            <!-- <div class="d-flex align-items-center justify-content-between">
-                                <div class="form-check m-0">
-                                    <input class="form-check-input" type="checkbox" value="" id="rememberPassword" />
-                                    <label class="form-check-label" for="rememberPassword">Remember</label>
-                                </div>
-                                <a href="forgot-password.html" class="text-blue text-decoration-underline">Lost password?</a>
-                            </div> -->
                             <div class="mb-3">
                                 <div class="d-grid py-3 mt-2">
                                     <button style="width: 30%; background: #337ab7; font-family: lato; font-weight:500" type="submit" class="btn btn-lg btn-primary">
@@ -148,18 +144,10 @@
                                 </div>
                             </div>
                             <div class="or"></div>
-                            <!-- <div class="d-flex gap-2 justify-content-center">
-                                <button type="submit" class="btn btn-outline-danger">
-                                    <i class="bi bi-google"></i>
-                                </button>
-                                <button type="submit" class="btn btn-outline-info">
-                                    <i class="bi bi-facebook"></i>
-                                </button>
-                            </div> -->
                             <div class="text-center pt-4">
                                 <span style="font-family: lato; font-weight:400">Belum Terdaftar ?</span>
                                 <a style="font-family: lato; font-weight:700" href="<?php echo base_url('Administrator/signup') ?>" class="text-blue text-decoration-underline ms-2">
-                                    Daftar</a>
+                                    Register</a>
                             </div>
                         </div>
                     </div>

@@ -43,7 +43,10 @@ class RekapDataModel extends CI_Model
 
     public function dailysalesrp()
     {
-        $this->db->select('SUM(tabel_jual.total_jual) AS rupiah', '*');
+        // $data = $this->db->query("SELECT SUM(tabel_jual.total_jual) AS rupiah FROM tabel_jual WHERE DATE(tabel_jual.tanggal_jual) = CURDATE()")->row();
+        // return $data;
+
+        $this->db->select('SUM(tabel_jual.total_jual) AS rupiah');
         $this->db->from('tabel_jual');
         $this->db->where('DATE(tabel_jual.tanggal_jual)', 'CURDATE()', false);
         $query = $this->db->get();

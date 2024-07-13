@@ -10,11 +10,16 @@ class Administrator extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->library('session');
-        $this->load->helper('url');
+        $this->load->helper(array('url', 'form'));
         $this->load->model('AuthModel');
         $this->load->model('RekapDataModel');
 
         date_default_timezone_set('Asia/Jakarta');
+
+        // Set header untuk mencegah caching
+        $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+        $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+        $this->output->set_header('Pragma: no-cache');
     }
 
 
@@ -27,13 +32,49 @@ class Administrator extends CI_Controller
     public function dashboard()
     {
         $this->load->library('session');
-        $username = $this->session->userdata('username');
 
+        // Periksa apakah pengguna sudah login
+        if (!$this->session->userdata('logged_in')) {
+            redirect('Administrator');
+        }
+
+        // Perbarui waktu aktivitas terakhir
+        $this->session->set_userdata('last_activity', time());
+
+        // Load data dan tampilkan view dashboard
+        $username = $this->session->userdata('username');
         $data['jmlnotajual'] = $this->RekapDataModel->dailysales();
         $data['jmlnotarupiah'] = $this->RekapDataModel->dailysalesrp();
-
         $data['user'] = $this->AuthModel->get_user($username);
+
         $this->load->view('administrator/dashboard', $data);
+
+
+        // if (!$this->session->userdata('logged_in') || (time() - $this->session->userdata('last_activity')) > $this->config->item('sess_expiration')) {
+        //     // Hapus session dan redirect ke halaman login jika session timeout
+        //     $this->session->unset_userdata('logged_in');
+        //     $this->session->sess_destroy();
+        //     redirect('Administrator');
+        // } else {
+        //     // Perbarui waktu aktivitas terakhir
+        //     $this->session->set_userdata('last_activity', time());
+
+        //     // Load data untuk dashboard
+        //     $username = $this->session->userdata('username');
+        //     $data['jmlnotajual'] = $this->RekapDataModel->dailysales();
+        //     $data['jmlnotarupiah'] = $this->RekapDataModel->dailysalesrp();
+        //     $data['user'] = $this->AuthModel->get_user($username);
+
+        //     $this->load->view('administrator/dashboard', $data);
+        // }
+
+        // $username = $this->session->userdata('username');
+
+        // $data['jmlnotajual'] = $this->RekapDataModel->dailysales();
+        // $data['jmlnotarupiah'] = $this->RekapDataModel->dailysalesrp();
+
+        // $data['user'] = $this->AuthModel->get_user($username);
+        // $this->load->view('administrator/dashboard', $data);
     }
 
     public function rekap()
@@ -147,7 +188,9 @@ class Administrator extends CI_Controller
 
                 $data_user = array(
                     'username' => $user->username,
-                    'password' => $user->password
+                    // 'password' => $user->password
+                    'logged_in' => true, // Menambahkan indikator login
+                    'last_activity' => time() // Misalnya, untuk session timeout
                 );
                 $this->session->set_userdata($data_user);
 
@@ -161,6 +204,99 @@ class Administrator extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode('Akun Tidak Ditemukan'));
             redirect('Administrator');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('logged_in');
+        $this->session->sess_destroy();
+        redirect('Administrator');
+    }
+
+    public function content()
+    {
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+
+        $data['jmlnotajual'] = $this->RekapDataModel->dailysales();
+        $data['jmlnotarupiah'] = $this->RekapDataModel->dailysalesrp();
+        $data['user'] = $this->AuthModel->get_user($username);
+        $this->load->view('administrator/content', $data);
+    }
+
+    public function do_upload()
+    {
+        $config['upload_path'] = FCPATH . 'assets/img/uploads/';  // Path absolut dari root aplikasi
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = 2048;
+        // $config['max_width'] = 1024;
+        // $config['max_height'] = 768;
+
+        $this->load->library('upload', $config);
+
+        $files = $_FILES;
+        $count = count($_FILES['photos']['name']);
+        $error = array();
+        $upload_data = array();
+
+        // Ambil semua file yang ada di folder upload
+        $files_in_directory = scandir($config['upload_path']);
+        $image_files = array_filter($files_in_directory, function ($file) {
+            return preg_match('/\.(gif|jpg|png|jpeg)$/i', $file);
+        });
+
+        // Hitung nomor urut terakhir dari file yang ada
+        $last_number = 0;
+        foreach ($image_files as $file) {
+            preg_match('/_(\d+)\./', $file, $matches);
+            if (isset($matches[1]) && $matches[1] > $last_number) {
+                $last_number = (int)$matches[1];
+            }
+        }
+
+        $today = date('dmY');
+
+        for ($i = 0; $i < $count; $i++) {
+            $_FILES['photos']['name'] = $files['photos']['name'][$i];
+            $_FILES['photos']['type'] = $files['photos']['type'][$i];
+            $_FILES['photos']['tmp_name'] = $files['photos']['tmp_name'][$i];
+            $_FILES['photos']['error'] = $files['photos']['error'][$i];
+            $_FILES['photos']['size'] = $files['photos']['size'][$i];
+
+            // Menentukan nama file dengan menggunakan waktu saat ini dan nomor urut
+            $new_file_name = 'mainBanner_' . $today . '_' . (++$last_number) . '.' . pathinfo($files['photos']['name'][$i], PATHINFO_EXTENSION);
+            $config['file_name'] = $new_file_name;
+
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('photos')) {
+                $error[] = $this->upload->display_errors();
+            } else {
+                $upload_data[] = $this->upload->data();
+            }
+        }
+
+        if (empty($error)) {
+            $response = ['success' => true, 'message' => 'Upload berhasil!'];
+            $this->session->set_flashdata('success', 'Upload berhasil!');
+        } else {
+            $response = ['success' => false, 'error' => implode('<br>', $error)];
+            $this->session->set_flashdata('error', implode('<br>', $error));
+        }
+
+        echo json_encode($response);
+    }
+
+    public function get_uploaded_images()
+    {
+        $path = FCPATH . 'assets/img/uploads/'; // Path ke folder upload
+        $images = scandir($path);
+        $image_files = array_filter($images, function ($file) use ($path) {
+            return preg_match('/\.(gif|jpg|jpeg|png)$/i', $file) && is_file($path . $file);
+        });
+
+        $data = array('images' => array_values($image_files)); // Pastikan indeks array dimulai dari 0
+        echo json_encode($data);
     }
 }
 
