@@ -231,6 +231,7 @@ class Administrator extends CI_Controller
         $config['max_size'] = 2048;
         // $config['max_width'] = 1024;
         // $config['max_height'] = 768;
+        $config['overwrite'] = true;
 
         $this->load->library('upload', $config);
 
@@ -276,6 +277,7 @@ class Administrator extends CI_Controller
             }
         }
 
+
         if (empty($error)) {
             $response = ['success' => true, 'message' => 'Upload berhasil!'];
             $this->session->set_flashdata('success', 'Upload berhasil!');
@@ -285,6 +287,18 @@ class Administrator extends CI_Controller
         }
 
         echo json_encode($response);
+    }
+
+    public function get_default_images()
+    {
+        $path = FCPATH . 'assets/img/uploads/default/'; // Path ke folder upload
+        $images = scandir($path);
+        $image_files = array_filter($images, function ($file) use ($path) {
+            return preg_match('/\.(gif|jpg|jpeg|png)$/i', $file) && is_file($path . $file);
+        });
+
+        $data = array('images' => array_values($image_files)); // Pastikan indeks array dimulai dari 0
+        echo json_encode($data);
     }
 
     public function get_uploaded_images()
@@ -297,6 +311,107 @@ class Administrator extends CI_Controller
 
         $data = array('images' => array_values($image_files)); // Pastikan indeks array dimulai dari 0
         echo json_encode($data);
+    }
+
+    public function delete_image()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $image = $data['image'];
+
+        $filePath = FCPATH . 'assets/img/uploads/' . $image;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'File not found']);
+        }
+    }
+
+    // public function set_default_image()
+    // {
+    //     $postData = json_decode(file_get_contents('php://input'), true);
+    //     $images = $postData['images'];
+
+    //     $sourcePath = FCPATH . 'assets/img/uploads/';
+    //     $destinationPath = FCPATH . 'assets/img/uploads/default/';
+
+    //     // Membuat folder default jika belum ada
+    //     if (!file_exists($destinationPath)) {
+    //         mkdir($destinationPath, 0777, true);
+    //     }
+
+    //     // Hapus gambar di folder default jika jumlahnya 5 atau lebih
+    //     $defaultImages = glob($destinationPath . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+    //     if (count($defaultImages) >= 5) {
+    //         // Hapus semua gambar di folder default
+    //         foreach ($defaultImages as $imageFile) {
+    //             unlink($imageFile);
+    //         }
+    //     }
+
+    //     // Pindahkan gambar baru ke folder default
+    //     foreach ($images as $image) {
+    //         $sourceFile = $sourcePath . $image;
+    //         $destinationFile = $destinationPath . $image;
+
+    //         if (file_exists($sourceFile)) {
+    //             // Memindahkan gambar ke folder default
+    //             if (rename($sourceFile, $destinationFile)) {
+    //                 // Optional: Delete the source file after moving
+    //             } else {
+    //                 echo json_encode(['success' => false, 'error' => 'Failed to move image: ' . $image]);
+    //                 return;
+    //             }
+    //         } else {
+    //             echo json_encode(['success' => false, 'error' => 'Source image not found: ' . $image]);
+    //             return;
+    //         }
+    //     }
+
+    //     echo json_encode(['success' => true]);
+    // }
+
+    public function set_default_image()
+    {
+        $postData = json_decode(file_get_contents('php://input'), true);
+        $images = $postData['images'];
+
+        $sourcePath = FCPATH . 'assets/img/uploads/';
+        $destinationPath = FCPATH . 'assets/img/uploads/default/';
+
+        // Membuat folder default jika belum ada
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0777, true);
+        }
+
+        // Hapus semua gambar di folder default
+        $defaultImages = glob($destinationPath . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+        foreach ($defaultImages as $imageFile) {
+            unlink($imageFile);
+        }
+
+        $error = array();
+
+        // Salin gambar baru ke folder default
+        foreach ($images as $image) {
+            $sourceFile = $sourcePath . $image;
+            $destinationFile = $destinationPath . $image;
+
+            if (file_exists($sourceFile)) {
+                // Salin gambar ke folder default
+                if (!copy($sourceFile, $destinationFile)) {
+                    $error[] = 'Failed to copy image: ' . $image;
+                }
+            } else {
+                $error[] = 'Source image not found: ' . $image;
+            }
+        }
+
+        if (empty($error)) {
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'error' => implode('<br>', $error)]);
+        }
     }
 }
 

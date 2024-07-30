@@ -82,6 +82,53 @@
         aspect-ratio: 513 px/238 px;
 
     }
+
+    .uploaded-image-container {
+        display: inline-block;
+        /* Menjaga gambar tetap sejajar */
+        text-align: center;
+        /* Memusatkan tombol di bawah gambar */
+        margin-right: 5px;
+        /* Jarak antar gambar */
+        margin-bottom: 20px;
+        /* Jarak antara gambar dan tombol */
+        margin-left: 5px;
+    }
+
+    .default-image-container {
+        display: inline-block;
+        /* Menjaga gambar tetap sejajar */
+        text-align: center;
+        /* Memusatkan tombol di bawah gambar */
+        margin-bottom: 0.5%;
+        /* Jarak antara gambar dan tombol */
+
+    }
+
+
+    .uploaded-image {
+        /* width: 205px; */
+        /* Ubah sesuai kebutuhan */
+        /* height: 95px; */
+        /* Ubah sesuai kebutuhan */
+        object-fit: cover;
+    }
+
+    .btn-display {
+        /* display: block; */
+        margin-left: 5px;
+        margin-top: 5px;
+        padding: none;
+        float: inline-start;
+    }
+
+    .card-body {
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    }
+
+    .card {
+        --bs-card-spacer-y: 0;
+    }
 </style>
 
 <body>
@@ -110,9 +157,20 @@
                     <div class="row">
                         <div class="col-xxl-12">
                             <div class="card mb-4">
-                                <div id="uploadedImagesContainer" style="margin-top: 20px;"></div>
                                 <div class="card-header">
-                                    <h5 class="card-title">Foto Background</h5>
+                                    <h5 class="card-title">Default Background</h5>
+                                </div>
+                                <div id="defaultBackgroundContainer" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: solid 0.5px; padding-top: 5px"></div>
+                                <div class="card-header">
+                                    <h5 class="card-title">Galeri Foto</h5>
+                                </div>
+                                <div id="uploadedImagesContainer" style="margin-left: 10px; margin-right: 10px; border: solid 0.5px; padding-top: 5px"></div>
+                                <div>
+                                    <label style="font-style:italic; margin-left: 10px; margin-top: 10px" for="">Silahkan pilih 5 foto untuk dijadikan default background</label>
+                                </div>
+                                <div id="setDefaultContainer" style="margin-left: 10px; margin-top: 10px"></div>
+                                <div class="card-header mt-3">
+                                    <h5 class="card-title">Upload Foto</h5>
                                 </div>
                                 <div class="card-body">
                                     <!-- Row start -->
@@ -268,6 +326,8 @@
         }
 
         document.getElementById('uploadForm').onsubmit = function(e) {
+            e.preventDefault(); // Mencegah submit form secara default
+
             if (storedFiles.length !== 5) {
                 var alertContainer = document.getElementById('alertContainer');
                 alertContainer.innerHTML = ''; // Bersihkan alert sebelumnya
@@ -291,8 +351,7 @@
                 alertDiv.appendChild(alertButton);
 
                 alertContainer.appendChild(alertDiv);
-                e.preventDefault(); // Mencegah submit form jika kurang dari 5
-                return;
+                return; // Mencegah proses pengunggahan jika jumlah file tidak sesuai
             }
 
             var formData = new FormData();
@@ -309,12 +368,11 @@
                     var modalBody = document.getElementById('messageModal').querySelector('.modal-body');
 
                     if (response.success) {
-                        modalBody.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">' + response.message + '</div>';
+                        modalBody.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">' + response.message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                         modal.show();
 
                         document.getElementById('messageModal').addEventListener('hidden.bs.modal', function() {
                             storedFiles = []; // Kosongkan array storedFiles
-                            // renderPreview(); // Perbarui tampilan
                             location.reload(); // Segarkan halaman
                         });
                     } else {
@@ -326,28 +384,201 @@
                 }
             };
             xhr.send(formData);
-
-            e.preventDefault(); // Mencegah submit form secara default
         };
 
         document.addEventListener("DOMContentLoaded", function() {
+            var defaultBackgroundContainer = document.getElementById('defaultBackgroundContainer');
+
+            fetch('<?php echo base_url('Administrator/get_default_images'); ?>')
+                .then(response => response.json())
+                .then(data => {
+                    data.images.forEach(image => {
+                        var imgContainer = document.createElement('div');
+                        imgContainer.className = 'default-image-container';
+                        imgContainer.style.width = '20%';
+
+                        var img = document.createElement('img');
+                        img.src = '<?php echo base_url('assets/img/uploads/default/'); ?>' + image;
+                        img.style.width = '97%';
+                        img.style.margin = '5px';
+                        img.style.objectFit = 'cover';
+
+                        img.onload = function() {
+                            setImageHeight(img);
+                        };
+
+                        imgContainer.appendChild(img);
+                        defaultBackgroundContainer.appendChild(imgContainer);
+                    });
+
+                    // Tambahkan event listener untuk resize
+                    window.addEventListener('resize', function() {
+                        var images = document.querySelectorAll('.default-image-container img');
+                        images.forEach(function(img) {
+                            setImageHeight(img);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+
+            function setImageHeight(img) {
+                var width = img.clientWidth;
+                var height = width * 0.47;
+                img.style.height = height + 'px';
+                console.log(`Set height of image (${img.src}) to: ${img.style.height}`);
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
             var uploadedImagesContainer = document.getElementById('uploadedImagesContainer');
+            var selectedImages = new Set();
 
             fetch('<?php echo base_url('Administrator/get_uploaded_images'); ?>')
                 .then(response => response.json())
                 .then(data => {
                     data.images.forEach(image => {
+                        var imgContainer = document.createElement('div');
+                        imgContainer.className = 'uploaded-image-container';
+                        imgContainer.style.width = '13.5%';
+
                         var img = document.createElement('img');
                         img.src = '<?php echo base_url('assets/img/uploads/'); ?>' + image;
-                        img.className = 'uploaded-image';
-                        img.style.margin = '10px';
-                        img.style.width = '100px'; // Ubah sesuai kebutuhan
-                        img.style.height = '100px'; // Ubah sesuai kebutuhan
-                        uploadedImagesContainer.appendChild(img);
+                        // img.className = 'uploaded-image';
+                        // img.style.width = '100px';
+                        img.style.width = '98%';
+
+                        img.onload = function() {
+                            setImageHeight(img);
+                        };
+
+                        img.style.margin = '5px';
+                        img.style.objectFit = 'cover';
+                        img.onclick = function() {
+                            if (selectedImages.has(image)) {
+                                selectedImages.delete(image);
+                                img.style.border = '';
+                                img.style.opacity = '';
+                            } else if (selectedImages.size < 5) {
+                                selectedImages.add(image);
+                                img.style.border = '1px solid #4542ab';
+                                img.style.opacity = '50%';
+                            } else {
+                                alert('You can only select up to 5 images.');
+                            }
+
+                            if (selectedImages.size === 5) {
+                                setDefaultBtn.disabled = false;
+                            } else {
+                                setDefaultBtn.disabled = true;
+                            }
+                        };
+                        imgContainer.appendChild(img);
+
+                        window.addEventListener('resize', function() {
+                            var images = document.querySelectorAll('.uploaded-image-container img');
+                            images.forEach(function(img) {
+                                setImageHeight(img);
+                            });
+                        });
+
+                        var imgName = document.createElement('div');
+                        imgName.textContent = image; // Nama file gambar
+                        imgName.style.textAlign = 'left';
+                        imgName.style.marginLeft = '5px';
+                        imgContainer.appendChild(imgName);
+
+                        var deleteBtn = document.createElement('button');
+                        deleteBtn.className = 'btn btn-danger btn-sm btn-display';
+                        deleteBtn.innerHTML = '<i class="bi">hapus</i>';
+                        deleteBtn.onclick = function() {
+                            deleteImage(image);
+                        };
+
+                        var actionContainer = document.createElement('div');
+                        actionContainer.style.textAlign = 'center';
+                        actionContainer.style.display = 'flex';
+                        actionContainer.style.alignItems = 'baseline';
+                        actionContainer.appendChild(deleteBtn);
+
+                        imgContainer.appendChild(actionContainer);
+                        uploadedImagesContainer.appendChild(imgContainer);
                     });
+
+                    var setDefaultBtn = document.createElement('button');
+                    setDefaultBtn.className = 'btn btn-primary btn-sm';
+                    setDefaultBtn.textContent = 'Set as Default';
+                    setDefaultBtn.disabled = true;
+                    setDefaultBtn.onclick = function() {
+                        if (selectedImages.size === 5) {
+                            setDefaultImage(Array.from(selectedImages));
+                            window.location.reload();
+                        } else {
+                            alert('Please select exactly 5 images first.');
+                        }
+                    };
+
+                    setDefaultContainer.appendChild(setDefaultBtn);
                 })
                 .catch(error => console.error('Error:', error));
+
+            function setImageHeight(img) {
+                var width = img.clientWidth;
+                var height = width * 0.47;
+                img.style.height = height + 'px';
+                console.log(`Set height of image (${img.src}) to: ${img.style.height}`);
+            }
         });
+
+        function deleteImage(imageName) {
+            if (confirm('Anda yakin ingin menghapus gambar ini?')) {
+                fetch('<?php echo base_url('Administrator/delete_image'); ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            image: imageName
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // document.querySelector(`.uploaded-image-container:contains('${imageName}')`).remove();
+                            document.querySelectorAll('.uploaded-image-container').forEach(element => {
+                                if (element.textContent.includes(imageName)) {
+                                    element.remove();
+                                }
+                            });
+                            alert('Image deleted successfully.');
+                            // window.location.reload();
+                        } else {
+                            alert('Failed to delete image.');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+
+        function setDefaultImage(imageNames) {
+            fetch('<?php echo base_url('Administrator/set_default_image'); ?>', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        images: imageNames
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Default images set successfully.');
+                    } else {
+                        alert('Failed to set default images.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

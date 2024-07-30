@@ -202,27 +202,12 @@
                 </ul>
             </li> -->
             <li class="treeview menu-item <?php echo ($current_url == 'content') ? 'active' : ''; ?>">
-                <a href="">
+                <a href="#!">
                     <i class="bi bi-ui-checks-grid"></i>
                     <span class="menu-text">Content</span>
                 </a>
                 <ul class="treeview-menu">
-                    <!-- <li>
-                        <a href="form-inputs.html">Form Inputs</a>
-                    </li>
-                    <li>
-                        <a href="form-checkbox-radio.html">Checkbox &amp; Radio</a>
-                    </li>
-                    <li>
-                        <a href="form-file-input.html">File Input</a>
-                    </li>
-                    <li>
-                        <a href="form-validations.html">Validations</a>
-                    </li>
-                    <li>
-                        <a href="date-time-pickers.html">Date Time Pickers</a>
-                    </li> -->
-                    <li>
+                    <li class="<?php echo ($current_url == 'content') ? 'active' : ''; ?>">
                         <a href="<?php echo base_url('administrator/content') ?>">Background</a>
                     </li>
                 </ul>
