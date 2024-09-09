@@ -28,6 +28,8 @@
     <link href="<?php echo base_url('assets/') ?>vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/') ?>vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Template Main CSS File -->
     <link href="<?php echo base_url('assets/') ?>css/main.css" rel="stylesheet">
 
@@ -218,7 +220,7 @@
         }
     }
 
-    @media screen and (max-width: 932px) {
+    @media screen and (max-width: 960px) {
 
         .tren-single {
             width: 22.95%;
@@ -319,6 +321,16 @@
 
     }
 
+    @media screen and (max-width: 960px) {
+        .hero .info h2 {
+            font-size: 45px;
+        }
+
+        .tittlecombo {
+            font-size: 40px;
+        }
+    }
+
     @media screen and (max-width: 932px) {
         .hero .info h2 {
             font-size: 45px;
@@ -373,7 +385,7 @@
     }
 
 
-    @media screen and (min-width: 450px) and (max-width: 950px) {
+    @media screen and (min-width: 450px) and (max-width: 960px) {
         .responsiv {
             width: 50%;
         }
@@ -407,7 +419,7 @@
             display: none;
         }
 
-        /* .flex-tampilsmall {
+        /* .flex-tampilsmall {  
             display: block;
         } */
 
@@ -571,6 +583,35 @@
     .border-produk:hover {
         border: 1px solid #337ab7;
     }
+
+    .hero .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mobile-nav-show {
+        padding-right: 0;
+    }
+
+    @media screen and (min-width: 970px) {
+        .padding-merk {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    @media screen and (max-width:960px) {
+        padding-merk2 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .padding-merk {
+            margin-left: 0;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
 </style>
 
 <body>
@@ -586,14 +627,15 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
                         <h2 class="tittle1" data-aos="fade-down">COMBO PUTRA <br><span class="tittlecombo">Solusi Bahan Bangunan Anda</span></h2>
-                        <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <!-- <p data-aos="fade-up">Salah satu toko pertama yang hadir melayani penjualan bahan bangunan di Perumnas Banyumanik. Sedangkan Perumnas Banyumanik adalah proyek perumahan yang dibangun pada pertengahan dekade 1970an dan diresmikan oleh Presiden Soeharto pada tahun 1979</p> -->
+                        <p data-aos="fade-up">Toko Bangunan Pertama di Perumnas Banyumanik yang sudah terpercaya melayani kebutuhan bahan bangunan sejak tahun 1979.</p>
                         <a data-aos="fade-up" data-aos-delay="200" href="<?php echo base_url('Katalog') ?>" class="btn-get-started" style="font-family: lato; font-weight:700; font-size:20px; padding: 8px 30px; border-radius:8px">Cari Barang</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
 
             <div class="carousel-item active" style="background-image: url(<?php echo base_url('assets/') ?>img/tokobanner.jpg)"></div>
@@ -610,7 +652,28 @@
                 <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
             </a>
 
+        </div> -->
+
+        <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="">
+                <?php foreach ($carouselImages as $index => $imageUrl) : ?>
+                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>" style="background-image: url('<?php echo $imageUrl; ?>');">
+                        <!-- Optional: You can add content inside the carousel-item here -->
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                <!-- <span class="visually-hidden">Previous</span> -->
+            </a>
+
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                <!-- <span class="visually-hidden">Next</span> -->
+            </a>
         </div>
+
 
     </section><!-- End Hero Section -->
 
@@ -623,7 +686,7 @@
 
                 <div class=" section-header">
                     <h2>Tren Penjualan</h2>
-                    <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
+                    <p>Jenis barang dengan jumlah pembelian terbanyak di setiap kategori</p>
                 </div>
 
                 <div class="row gy-4">
@@ -679,7 +742,7 @@
 
                 <div class="section-header">
                     <h2>Tren Penjualan</h2>
-                    <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p>
+                    <!-- <p>In commodi voluptatem excepturi quaerat nihil error autem voluptate ut et officia consequuntu</p> -->
                 </div>
                 <div class="position-relative h-100">
 
@@ -789,7 +852,7 @@
 
                     <div style="padding-left: 2%;" class="col-lg-8 d-flex flex-column justify-content-center">
                         <h3>KERAMIK & GRANIT</h3>
-                        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus.</p>
+                        <!-- <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus.</p> -->
                         <div class="row flex-tampilnormal">
                             <?php foreach ($section1 as $tampil) { ?>
                                 <?php
@@ -801,11 +864,14 @@
                                 ?>
 
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection1 ?>" width="130px" height="130px" alt=""></i>
+                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection1 ?>" width="130px" height="130px" alt=""></i>
+                                    </a>
                                     <div>
                                         <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil->harga_jual) ?></a></h4>
                                         <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil->nama_barang ?></p>
                                     </div>
+
                                 </div><!-- End Icon Box -->
                             <?php } ?>
 
@@ -855,7 +921,7 @@
 
                     <div style="padding-right: 2%;" class="col-lg-8 d-flex flex-column justify-content-center">
                         <h3 class="garisbawah" style="text-align:right">SANITARY</h3>
-                        <p style="text-align:right">Maxime quia dolorum alias perspiciatis. Earum voluptatem sint at non. Ducimus maxime minima iste magni sit praesentium assumenda minus. </p>
+                        <!-- <p style="text-align:right">Maxime quia dolorum alias perspiciatis. Earum voluptatem sint at non. Ducimus maxime minima iste magni sit praesentium assumenda minus. </p> -->
 
                         <div class="row flex-tampilnormal">
                             <?php foreach ($section2 as $tampil2) { ?>
@@ -867,12 +933,14 @@
                                 }
                                 ?>
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 responsiv" data-aos="fade-up" data-aos-delay="100">
+
                                     <div style="text-align: right;">
                                         <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil2->harga_jual) ?></a></h4>
                                         <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil2->nama_barang ?></p>
                                     </div>
-                                    <i class="bi flex-shrink-0 " style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection2 ?>" width="130px" height="130px" alt=""></i>
-
+                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil2->id_barang; ?>">
+                                        <i class="bi flex-shrink-0 " style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection2 ?>" width="130px" height="130px" alt=""></i>
+                                    </a>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
                         </div>
@@ -920,7 +988,7 @@
 
                     <div style="padding-left: 2%;" class="col-lg-8 d-flex flex-column justify-content-center">
                         <h3>ALAT LISTRIK</h3>
-                        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. </p>
+                        <!-- <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. </p> -->
                         <div class="row flex-tampilnormal">
                             <?php foreach ($section3 as $tampil3) { ?>
                                 <?php
@@ -932,7 +1000,9 @@
                                 ?>
 
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection3 ?>" width="130px" height="130px" alt=""></i>
+                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection3 ?>" width="130px" height="130px" alt=""></i>
+                                    </a>
                                     <div>
                                         <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil3->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil3->harga_jual) ?></a></h4>
                                         <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil3->nama_barang ?></p>
@@ -987,7 +1057,7 @@
                         <h3 class="garisbawah" style="text-align:right">DOOR & WINDOW</h3>
 
 
-                        <p style="text-align:right">Maxime quia dolorum alias perspiciatis. Earum voluptatem sint at non. Ducimus maxime minima iste magni sit praesentium assumenda minus. </p>
+                        <!-- <p style="text-align:right">Maxime quia dolorum alias perspiciatis. Earum voluptatem sint at non. Ducimus maxime minima iste magni sit praesentium assumenda minus. </p> -->
 
                         <div class="row flex-tampilnormal">
                             <?php foreach ($section4 as $tampil4) { ?>
@@ -1004,8 +1074,9 @@
                                         <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil4->harga_jual) ?></a></h4>
                                         <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil4->nama_barang ?></p>
                                     </div>
-                                    <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection4 ?>" width="130px" height="130px" alt=""></i>
-
+                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil4->id_barang; ?>">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-left:15px; margin-right:auto"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection4 ?>" width="130px" height="130px" alt=""></i>
+                                    </a>
                                 </div><!-- End Icon Box -->
                             <?php } ?>
 
@@ -1056,7 +1127,7 @@
 
                     <div style="padding-left: 2%;" class="col-lg-8 d-flex flex-column justify-content-center">
                         <h3>TEKNIK & PERTUKANGAN</h3>
-                        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. </p>
+                        <!-- <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. </p> -->
                         <div class="row flex-tampilnormal">
                             <?php foreach ($section5 as $tampil5) { ?>
                                 <?php
@@ -1068,7 +1139,9 @@
                                 ?>
 
                                 <div style="margin-top: 30px;" class="icon-box d-flex position-relative col-lg-4 show responsiv" data-aos="fade-up" data-aos-delay="100">
-                                    <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection5 ?>" width="130px" height="130px" alt=""></i>
+                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>">
+                                        <i class="bi flex-shrink-0" style="width:130px; height:130px; margin-right:15px"><img class="flex-img" style="padding: 2%;" src="<?php echo $fotosection5 ?>" width="130px" height="130px" alt=""></i>
+                                    </a>
                                     <div>
                                         <h4><a class="flex-harga" style="font-family: Lato; font-weight:500;" href="<?php echo base_url('ProdukSingle?id_barang=') . $tampil5->id_barang; ?>" class="stretched-link">Rp <?php echo number_format($tampil5->harga_jual) ?></a></h4>
                                         <p style="font-family: Lato; font-weight:300; font-size: 15px;"><?php echo $tampil5->nama_barang ?></p>
@@ -1153,11 +1226,12 @@
                             <h4>Avian</h4>
                         </a><!-- End tab nav item -->
 
-                    <li class="nav-item col-2">
+                        <!-- <li class="nav-item col-2">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
                             <h4>Jotun</h4>
                         </a>
-                    </li><!-- End tab nav item -->
+                    </li>  -->
+                        <!-- End tab nav item -->
 
                     <li class="nav-item col-2">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
@@ -1175,7 +1249,11 @@
                             <h4>Premio</h4>
                         </a>
                     </li><!-- End tab nav item -->
-
+                    <li class="nav-item col-2">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-7">
+                            <h4>Shintex</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
                 </ul>
 
                 <div class="tab-content">
@@ -1302,7 +1380,7 @@
                         </div>
                     </div><!-- End tab content item -->
 
-                    <div class="tab-pane" id="tab-3">
+                    <!-- <div class="tab-pane" id="tab-3">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                                 <h3 style="margin-bottom: 0px; padding-bottom:0px;">Voluptatibus commodi accusamu</h3>
@@ -1346,7 +1424,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div><!-- End post item -->
+                                        </div>
 
                                     <?php } ?>
                                     <div data-aos="fade-up" data-aos-delay="100">
@@ -1361,7 +1439,9 @@
                                 <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/jotun1.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
-                    </div><!-- End tab content item -->
+                    </div> -->
+
+                    <!-- End tab content item -->
 
                     <div class="tab-pane" id="tab-4">
                         <div class="row">
@@ -1530,13 +1610,72 @@
                                     <?php } ?>
                                     <div data-aos="fade-up" data-aos-delay="100">
                                         <a href="<?php echo base_url('Katalog?id_kategori=') . $catbypremio->id_kategori . '&nama_kategori=' . $catbypremio->nama_kategori . '&id_subkategori=' . $catbypremio->id_subkategori . '&nama_subkategori=' . $catbypremio->nama_subkategori . '&id_merk=' . $catbypremio->id_merk . '&merk=' . $catbypremio->nama_merk ?>">
-                                            <p class="btncatbymerk"><i style="font-family: lato; font-weight:300; color: #364d59;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 text-center">
                                 <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/premio.jpeg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div><!-- End tab content item -->
+                    <div class="tab-pane" id="tab-7">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Omnis fugiat ea explicabo sunt</h3>
+                                <p class="fst-italic">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                </p>
+                                <div class="row gy-4">
+                                    <?php foreach ($catshintex as $catbyshintex) { ?>
+                                        <?php
+                                        if ($catbyshintex->nama_foto_barang !== null) {
+                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyshintex->nama_foto_barang;
+                                        } else {
+                                            $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
+                                        } ?>
+
+                                        <?php
+                                        if ($catbyshintex->stok_update >= '5') {
+                                            $stok = "Tersedia";
+                                        } elseif ($catbyshintex->stok_update < '5' && $catbyshintex > '0') {
+                                            $stok = "Hampir Habis";
+                                        } else {
+                                            $stok = "Preorder";
+                                        }
+                                        ?>
+                                        <div class="col-xl-4 col-md-6 responsiv-cat" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="post-item position-relative h-100 background-paint">
+                                                <div class="post-img position-relative overflow-hidden center-paint">
+                                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $catbyshintex->id_barang ?>"><img src="<?php echo $img ?>" class="img-fluid img-paint" alt=""></a>
+                                                </div>
+                                                <div class="post-content d-flex flex-column">
+
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbyshintex->nama_barang ?></h3>
+                                                    <hr style="margin-bottom: 10px;">
+                                                    <div class="meta align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbyshintex->harga_jual) ?> </span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- End post item -->
+
+                                    <?php } ?>
+                                    <div data-aos="fade-up" data-aos-delay="100">
+                                        <a href="<?php echo base_url('Katalog?id_kategori=') . $catbyshintex->id_kategori . '&nama_kategori=' . $catbyshintex->nama_kategori . '&id_subkategori=' . $catbyshintex->id_subkategori . '&nama_subkategori=' . $catbyshintex->nama_subkategori . '&id_merk=' . $catbyshintex->id_merk . '&merk=' . $catbyshintex->nama_merk ?>">
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/shintex2.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div><!-- End tab content item -->
@@ -1554,8 +1693,8 @@
                     <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
                 </div>
                 <div class="position-relative h-100 row">
-                    <div class="slides-1 portfolio-details-slider swiper col-lg-6 row merk-tab" style="border-radius:5px;">
-                        <div class="swiper-wrapper align-items-center" style="padding-left: 0%;">
+                    <div class="slides-1 portfolio-details-slider swiper col-lg-6 row merk-tab padding-merk" style="border-radius:5px; margin-right: 0px;">
+                        <div class="swiper-wrapper align-items-center padding-merk2" style="padding-left: 0%;">
 
                             <div class="swiper-slide">
                                 <a href="<?php echo base_url('Katalog?id_merk=000000000326&merk=Ace Oldfields'); ?>"><img class="merk-slide" src="assets/img/projects/ace.png" alt=""></a>
@@ -1765,6 +1904,7 @@
 
     <!-- Template Main JS File -->
     <script src="<?php echo base_url('assets/') ?>js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

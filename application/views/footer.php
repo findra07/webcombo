@@ -69,18 +69,27 @@
                 <div class="col-lg-4 col-md-3 footer-links flex-jasa">
                     <h4>Kami Menerima</h4>
                     <ul style="margin-left: 3%;">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; margin:5px;" src="<?php echo base_url('assets/') ?>img/tunai.jpg" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding:0.5%" src="<?php echo base_url('assets/') ?>img/bank1.png" alt="">
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding:0.5%" src="<?php echo base_url('assets/') ?>img/visa.png" alt="">
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding:0.5%" src="<?php echo base_url('assets/') ?>img/mastercard.png" alt="">
-                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding:0.5%" src="<?php echo base_url('assets/') ?>img/bank1.png" alt="">
+
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px" src="<?php echo base_url('assets/') ?>img/qris1.jpg" alt="">
                     </ul>
                     <br>
                     <h4 style="margin-top: 5%;">Jasa Pengiriman</h4>
                     <ul style="margin-left: 3%;">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px;" src="<?php echo base_url('assets/') ?>img/truk.png" alt="">
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding-top:1.5%; padding-right:0.5%" src="<?php echo base_url('assets/') ?>img/jne.png" alt="">
                         <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding-left:0.5%; padding-top:0.5%" src="<?php echo base_url('assets/') ?>img/jnt1.png" alt="">
-                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding-top:1%" src="<?php echo base_url('assets/') ?>img/tiki1.png" alt="">
-                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px;" src="<?php echo base_url('assets/') ?>img/truk.png" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding-left:0.5%; padding-top:0.5%" src="<?php echo base_url('assets/') ?>img/sicepat.png" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px;" src="<?php echo base_url('assets/') ?>img/grab-express2.png" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; margin:5px;" src="<?php echo base_url('assets/') ?>img/gosend.png" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; margin:5px;" src="<?php echo base_url('assets/') ?>img/shopexpress.jpg" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; margin:5px;" src="<?php echo base_url('assets/') ?>img/PAXEL.png" alt="">
+                        <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; margin:5px;" src="<?php echo base_url('assets/') ?>img/wahana2.jpg" alt="">
+                        <!-- <img style="border: 0.5px solid white; background-color: white; border-radius:2px; width:80px; height:45px; object-fit:contain; margin:5px; padding-top:1%" src="<?php echo base_url('assets/') ?>img/tiki1.png" alt=""> -->
+
                     </ul>
                 </div>
                 <!-- End footer links column-->

@@ -200,6 +200,22 @@ class CatModel extends CI_Model
 
         return $data;
     }
+
+    public function merkshintex()
+    {
+        $data = $this->db->query("SELECT tk.id_kategori, tk.nama_kategori, tsub.id_subkategori, tsub.nama_subkategori, tm.id_merk, tm.nama_merk, tb.id_barang, tb.nama_barang, tb.harga_jual, tfb.nama_foto_barang, ts.stok_jual, ts.stok_update 
+        FROM tabel_barang tb 
+        JOIN tabel_subkategori tsub ON tsub.id_subkategori = tb.id_subkategori 
+        JOIN tabel_kategori tk ON tk.id_kategori = tsub.id_kategori 
+        JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
+        JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
+        LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
+        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000094') 
+        ORDER BY `ts`.`stok_jual` DESC 
+        LIMIT 3")->result();
+
+        return $data;
+    }
 }
 
 /* End of file CatModel.php */

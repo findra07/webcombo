@@ -7,6 +7,7 @@ class KatalogModel extends CI_Model
     public function allproduk($limit, $start, $nama_produk, $id_subkategori, $id_merk, $id)
     {
         $status_product = array('0', '4');
+        $hidden = array('000000017021', '000000020631', '000000020778', '000000021166', '000000023053');
 
         $this->db->select('tb.id_barang, tb.id_satuan, tb.id_subkategori, tb.id_merk, tb.kode_barang, tb.status_product, tb.status_barang, tb.nama_barang, tb.harga_jual, tb.jenis_barang, tsat.nama_satuan, tsub.id_subkategori, tsub.nama_subkategori, tsub.id_kategori, tk.nama_kategori, ts.stok_update, tfb.nama_foto_barang')
             ->from('tabel_barang tb')
@@ -47,6 +48,7 @@ class KatalogModel extends CI_Model
         }
 
         $this->db->where_in('tb.status_product', $status_product)->where('tb.status_barang', 0)->where('ts.id_gudang', '000000000015');
+        $this->db->where_not_in('tb.id_barang', $hidden);
 
         $this->db->limit($limit, $start);
         $this->db->order_by('tb.kode_barang', 'ASC');

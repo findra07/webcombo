@@ -32,6 +32,7 @@ class Home extends CI_Controller
         $data['catpropan'] = $this->CatModel->merkpropan();
         $data['catnippon'] = $this->CatModel->merknippon();
         $data['catpremio'] = $this->CatModel->merkpremio();
+        $data['catshintex'] = $this->CatModel->merkshintex();
 
         $data['jml_penjualan'] = $this->KatalogModel->jml_penjualan();
         $data['jml_pengiriman'] = $this->KatalogModel->jml_pengiriman();
@@ -50,9 +51,28 @@ class Home extends CI_Controller
         $data['visit_count'] = $visit_count;
         $data['today_visit_count'] = $today_visit_count;
 
+        // Get images from uploads/default folder
+        $defaultDir = FCPATH . 'assets/img/uploads/default/';
+        $images = glob($defaultDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+        $data['carouselImages'] = array_map(function ($imagePath) {
+            return base_url('assets/img/uploads/default/' . basename($imagePath));
+        }, $images);
 
         $this->load->view('home', $data);
     }
+
+    // private function getDefaultImages()
+    // {
+    //     $path = FCPATH . 'assets/img/uploads/default/';
+    //     $images = scandir($path);
+    //     $image_files = array_filter($images, function ($file) use ($path) {
+    //         return preg_match('/\.(gif|jpg|jpeg|png)$/i', $file) && is_file($path . $file);
+    //     });
+
+    //     return array_map(function ($image) use ($path) {
+    //         return base_url('assets/img/uploads/default/' . $image);
+    //     }, $image_files);
+    // }
 }
 
 /* End of file Home.php */

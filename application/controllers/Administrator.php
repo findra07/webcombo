@@ -265,8 +265,10 @@ class Administrator extends CI_Controller
             $_FILES['photos']['size'] = $files['photos']['size'][$i];
 
             // Menentukan nama file dengan menggunakan waktu saat ini dan nomor urut
-            $new_file_name = 'mainBanner_' . $today . '_' . (++$last_number) . '.' . pathinfo($files['photos']['name'][$i], PATHINFO_EXTENSION);
-            $config['file_name'] = $new_file_name;
+            // $new_file_name =  $today .  '.' . pathinfo($files['photos']['name'][$i], PATHINFO_EXTENSION);
+
+            // $new_file_name = 'mainBanner_' . $today . '_' . (++$last_number) . '.' . pathinfo($files['photos']['name'][$i], PATHINFO_EXTENSION);
+            // $config['file_name'] = $new_file_name;
 
             $this->upload->initialize($config);
 
@@ -301,6 +303,7 @@ class Administrator extends CI_Controller
         echo json_encode($data);
     }
 
+
     public function get_uploaded_images()
     {
         $path = FCPATH . 'assets/img/uploads/'; // Path ke folder upload
@@ -326,50 +329,6 @@ class Administrator extends CI_Controller
             echo json_encode(['success' => false, 'error' => 'File not found']);
         }
     }
-
-    // public function set_default_image()
-    // {
-    //     $postData = json_decode(file_get_contents('php://input'), true);
-    //     $images = $postData['images'];
-
-    //     $sourcePath = FCPATH . 'assets/img/uploads/';
-    //     $destinationPath = FCPATH . 'assets/img/uploads/default/';
-
-    //     // Membuat folder default jika belum ada
-    //     if (!file_exists($destinationPath)) {
-    //         mkdir($destinationPath, 0777, true);
-    //     }
-
-    //     // Hapus gambar di folder default jika jumlahnya 5 atau lebih
-    //     $defaultImages = glob($destinationPath . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-    //     if (count($defaultImages) >= 5) {
-    //         // Hapus semua gambar di folder default
-    //         foreach ($defaultImages as $imageFile) {
-    //             unlink($imageFile);
-    //         }
-    //     }
-
-    //     // Pindahkan gambar baru ke folder default
-    //     foreach ($images as $image) {
-    //         $sourceFile = $sourcePath . $image;
-    //         $destinationFile = $destinationPath . $image;
-
-    //         if (file_exists($sourceFile)) {
-    //             // Memindahkan gambar ke folder default
-    //             if (rename($sourceFile, $destinationFile)) {
-    //                 // Optional: Delete the source file after moving
-    //             } else {
-    //                 echo json_encode(['success' => false, 'error' => 'Failed to move image: ' . $image]);
-    //                 return;
-    //             }
-    //         } else {
-    //             echo json_encode(['success' => false, 'error' => 'Source image not found: ' . $image]);
-    //             return;
-    //         }
-    //     }
-
-    //     echo json_encode(['success' => true]);
-    // }
 
     public function set_default_image()
     {

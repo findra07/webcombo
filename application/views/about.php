@@ -108,6 +108,13 @@
             width: 50%;
         }
     }
+
+    @media (min-width: 991px) {
+        .about h2 {
+            max-width: 68%;
+            margin: 0 0 30px 0;
+        }
+    }
 </style>
 
 <body>
@@ -140,15 +147,29 @@
                 <div class="col-lg-7">
                     <h2>Siap Melayani Dengan Sepenuh Hati</h2>
                     <div class="our-story">
-                        <h4 style="font-family: lato; font-weight:700;">Since 1979</h4>
-                        <h3 style="font-family: lato; font-weight:900;">Our Story</h3>
-                        <p style="font-family: lato; font-weight:300; text-align: justify; ">Salah satu toko pertama yang hadir melayani penjualan bahan bangunan di Perumnas Banyumanik. Sedangkan Perumnas Banyumanik adalah proyek perumahan yang dibangun pada pertengahan dekade 1970an dan diresmikan oleh Presiden Soeharto pada tahun 1979.</p>
-                        <ul>
-                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
+                        <h4 style="font-family: lato; font-weight:900;">Sejak 1979</h4>
+                        <!-- <h3 style="font-family: lato; font-weight:900;">Our Story</h3> -->
+                        <p style="font-family: lato; font-weight:300; text-align: justify; text-indent: 40px; ">
+                            Berpengalaman lebih dari 40 tahun di penjualan bahan bangunan.
+                            Berawal dari pabrik pembuatan batako untuk menyuplai kebutuhan pembangunan Perumnas Banyumanik yang dicanangkan oleh Presiden Soeharto, kami mulai mengembangkan usaha dengan mendirikan toko bangunan pada tahun 1979.
+                            <br>
+                            Toko kami menawarkan konsep “One Stop Shopping” dimana
+                            pelanggan dapat memenuhi berbagai macam kebutuhan bahan
+                            bangunan mulai dari pembangunan awal pondasi sampai
+                            kebutuhan finishing lantai, dinding, atap, plumbing, sanitary, kelistrikan hingga berbagai macam aksesoris dan kebutuhan rumah tangga di satu atap.
+                            <br>
+
+                        <p style="font-family: lato; font-weight:300; text-align: justify; text-indent: 40px;">
+                            Harapan kami Toko Combo Putra dapat memberikan solusi kepada masyarakat luas atas segala kebutuhan bahan bangunan dengan harga kompetitif, berbelanja nyaman dan hemat.
+                            Kami selalu berkomitmen untuk memberikan kepuasan kepada pelanggan dengan memberikan pelayanan terbaik dan barang-barang yang berkualitas.
+                        </p>
+                        </p>
+                        <!-- <ul>
+                            <li><i class=" bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
                             <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in</span></li>
                             <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-                        </ul>
-                        <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque.</p>
+                            </ul> -->
+                        <!-- <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque.</p> -->
 
                         <div class="watch-video d-flex align-items-center position-relative">
                             <i class="bi bi-play-circle"></i>
@@ -267,10 +288,31 @@
                             }
                             ?>
 
+                            <?php
+                            if ($teamku->id_karyawan == "000000000021") {
+                                $nama_karyawan = "Yogie";
+                            } else if ($teamku->id_karyawan == "000000000057") {
+                                $nama_karyawan = "Vidya";
+                            } else if ($teamku->id_karyawan == "000000000008") {
+                                $nama_karyawan = "BHZen";
+                            } else if ($teamku->id_karyawan == "000000000058") {
+                                $nama_karyawan = "Bapak Azhar Combo";
+                            } else if ($teamku->id_karyawan == "000000000061") {
+                                $nama_karyawan = "Ibu Sulasmi";
+                            } else if ($teamku->id_karyawan == "000000000060") {
+                                $nama_karyawan = "Sani";
+                            } else if ($teamku->id_karyawan == "000000000062") {
+                                $nama_karyawan = "Era";
+                            } else {
+                                $nama_karyawan = $teamku->nama_karyawan;
+                            }
+
+                            ?>
+
 
                             <div class="col-lg-3 col-md-6 member portfolio-item <?php echo $filter ?>">
                                 <div class="member-img">
-                                    <img src="<?php echo $foto_url ?>" class="foto img-fluid" alt="">
+                                    <img style="object-fit: cover;" src="<?php echo $foto_url ?>" class="foto img-fluid" alt="">
 
                                     <div class="social">
                                         <a href="#"><i class="bi bi-twitter"></i></a>
@@ -280,7 +322,7 @@
                                     </div>
                                 </div>
                                 <div class="member-info text-center">
-                                    <h4 style="font-family: lato; font-weight:700;"><?php echo $teamku->nama_karyawan ?></h4>
+                                    <h4 style="font-family: lato; font-weight:700;"><?php echo $nama_karyawan ?></h4>
                                     <span style="font-family: lato; font-weight:300;"><?php echo $teamku->nama_jabatan ?></span>
                                     <p style="font-family: lato; font-weight:300;">Aliquam iure quaerat voluptatem praesentium possimus unde</p>
                                 </div>

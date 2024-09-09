@@ -48,8 +48,8 @@
 
 <style>
     .image-wrapper img {
-        width: 223px;
-        height: 223px;
+        width: 233px;
+        height: 233px;
         /* border: 1px solid black; */
         border-radius: 5px;
         padding: 10px 10px 10px 10px;
@@ -59,7 +59,7 @@
 
     .image-wrapper {
         width: auto;
-        height: 350px;
+        height: 368px;
         border: 0.5px solid rgba(82, 86, 94, 0.3);
         border-radius: 5px;
 

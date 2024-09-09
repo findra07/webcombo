@@ -208,7 +208,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="<?php echo ($current_url == 'content') ? 'active' : ''; ?>">
-                        <a href="<?php echo base_url('administrator/content') ?>">Background</a>
+                        <a href="<?php echo base_url('administrator/content') ?>">Main Banner</a>
                     </li>
                 </ul>
             </li>
