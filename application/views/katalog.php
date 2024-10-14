@@ -518,20 +518,24 @@
                             // let idKat = urlParams.get('id_kategori');
                             // idKategori = idKat == 'null' ? '000000000169' : idKat;
 
+                            let idKat = urlParams.get('id_kategori');
+                            idKategori = idKat == 'null' ? '000000000169' : idKat;
+                            // idKategori = idKat === null || idKat === 'null' ? '000000000169' : idKat;
+
                             let idSub = urlParams.get('id_subkategori');
-                            idSubkategori = idSub == 'null' ? '000000000011' : idSub;
-
-                            // if (idKat == 'null') {
-                            //     idKategori = '000000000169';
-                            // } else {
-                            //     idKategori = urlParams.get('id_kategori');
-                            // }
-
+                            idSubkategori = idSub == 'null' ? '000000000010' : idSub;
+                            // idSubkategori = idSub === null || idSub === 'null' ? '000000000010' : idSub;
 
                             let idMerk = urlParams.get('id_merk');
 
-                            let idKat = urlParams.get('id_kategori');
-                            idKategori = idKat == 'null' ? '000000000170' : idKat;
+
+                            if (idKategori === null && idSubkategori === null && idMerk === null) {
+                                idSubkategori = '000000000010';
+                                idKategori = '000000000169';
+                                console.log("000000000010, 000000000169")
+                            } else {
+                                console.log("idKategori:", idKategori, "idSubkategori:", idSubkategori);
+                            }
 
                             $('#search').on('keyup', function(event) {
                                 let nama_produk = $(this).val();
@@ -547,6 +551,14 @@
                                 allproduk(page, idSubkategori, idMerk, nama_produk, idKategori);
                             });
 
+                            const formatRupiah = angka => {
+                                return new Intl.NumberFormat('id-ID', {
+                                    style: 'currency',
+                                    currency: 'IDR',
+                                    minimumFractionDigits: 0, // Tidak ada desimal
+                                    maximumFractionDigits: 0 // Tidak ada desimal
+                                }).format(angka).replace('Rp', '').trim(); // Hapus simbol 'Rp' karena ditulis manual di HTML
+                            };
 
                             const showProduct = response => {
                                 let html = "";
@@ -561,7 +573,9 @@
                                         status = "PreOrder"
                                     }
 
-                                    harga = value.harga_jual;
+                                    let harga = formatRupiah(value.harga_jual); // Format harga menjadi Rupiah
+
+                                    // harga = value.harga_jual;
 
                                     html += `<div class="col-lg-3 col-md-6 gy-4 portfolio-item filter-remodeling portfolio-container flex-produk" data-aos="fade-up" data-aos-delay="200">
                                                     <div class="image-wrapper">

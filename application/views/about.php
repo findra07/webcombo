@@ -115,6 +115,15 @@
             margin: 0 0 30px 0;
         }
     }
+
+    .alt-services .icon-box {
+        margin-top: 30px;
+    }
+
+    .section-header {
+        /* text-align: center; */
+        padding-bottom: 30px;
+    }
 </style>
 
 <body>
@@ -192,13 +201,13 @@
 
                 <div class="col-lg-5 d-flex flex-column justify-content-center">
                     <h3>Pelayanan yang kami berikan meliputi</h3>
-                    <p>Maxime quia dolorum alias perspiciatis. Earum voluptatem sint at non. Ducimus maxime minima iste magni sit praesentium assumenda minus. Amet rerum saepe tempora vero.</p>
+                    <p style="font-family: lato; font-weight:500; font-size:17px; text-align: justify;">Toko Bangunan Combo Putra selalu memberikan pelayanan terbaiknya dan juga menyediakan bahan bangunan untuk menyokong proyek pembangunan anda.</p>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="bi bi-house-fill flex-shrink-0"></i>
                         <div>
                             <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Toko Combo Putra</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                            <p style="font-family: lato; font-weight:500; font-size:16px; text-align: justify;">Toko Bangunan Combo Putra menyediakan berbagai macam bahan material bangunan yang anda butuhkan, dengan stok komplit dan harga kompetitif.</p>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -206,7 +215,7 @@
                         <i class="bi bi-phone-vibrate-fill flex-shrink-0"></i>
                         <div>
                             <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online Call</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                            <p style="font-family: lato; font-weight:500; font-size:16px; text-align: justify;">Toko Bangunan Combo Putra melayani pemesanan barang melalui telepon toko untuk membantu mencukupi kebutuhan bahan material anda.</p>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -214,7 +223,7 @@
                         <i class="bi bi-messenger flex-shrink-0"></i>
                         <div>
                             <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online Chat</a></h4>
-                            <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+                            <p style="font-family: lato; font-weight:500; font-size:16px; text-align: justify;">Toko Bangunan Combo Putra melayani online chat untuk anda yang ingin bertanya perihal bahan material atau ketersediaan stok.</p>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -222,7 +231,7 @@
                         <i class="bi bi-cart-check-fill flex-shrink-0"></i>
                         <div>
                             <h4><a style="font-family: lato; font-weight:900;" href="" class="stretched-link">Online E-Comerce</a></h4>
-                            <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit non aspernatur odit amet. Et eligendi</p>
+                            <p style="font-family: lato; font-weight:500; font-size:16px; text-align: justify;">Toko Bangunan Combo Putra juga tersedia di berbagai aplikasi ecommerce </p>
                         </div>
                     </div><!-- End Icon Box -->
                 </div>
@@ -237,7 +246,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>Our Team</h2>
-                <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
+                <!-- <p>Tim terbaik Combo Putra siap memberikan pelayanan maksimal untuk anda.</p> -->
             </div>
 
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
@@ -288,27 +297,6 @@
                             }
                             ?>
 
-                            <?php
-                            if ($teamku->id_karyawan == "000000000021") {
-                                $nama_karyawan = "Yogie";
-                            } else if ($teamku->id_karyawan == "000000000057") {
-                                $nama_karyawan = "Vidya";
-                            } else if ($teamku->id_karyawan == "000000000008") {
-                                $nama_karyawan = "BHZen";
-                            } else if ($teamku->id_karyawan == "000000000058") {
-                                $nama_karyawan = "Bapak Azhar Combo";
-                            } else if ($teamku->id_karyawan == "000000000061") {
-                                $nama_karyawan = "Ibu Sulasmi";
-                            } else if ($teamku->id_karyawan == "000000000060") {
-                                $nama_karyawan = "Sani";
-                            } else if ($teamku->id_karyawan == "000000000062") {
-                                $nama_karyawan = "Era";
-                            } else {
-                                $nama_karyawan = $teamku->nama_karyawan;
-                            }
-
-                            ?>
-
 
                             <div class="col-lg-3 col-md-6 member portfolio-item <?php echo $filter ?>">
                                 <div class="member-img">
@@ -322,9 +310,9 @@
                                     </div>
                                 </div>
                                 <div class="member-info text-center">
-                                    <h4 style="font-family: lato; font-weight:700;"><?php echo $nama_karyawan ?></h4>
+                                    <h4 style="font-family: lato; font-weight:700;"><?php echo $teamku->nama_panggil ?></h4>
                                     <span style="font-family: lato; font-weight:300;"><?php echo $teamku->nama_jabatan ?></span>
-                                    <p style="font-family: lato; font-weight:300;">Aliquam iure quaerat voluptatem praesentium possimus unde</p>
+                                    <!-- <p style="font-family: lato; font-weight:300;">Aliquam iure quaerat voluptatem praesentium possimus unde</p> -->
                                 </div>
                             </div><!-- End Team Member -->
 

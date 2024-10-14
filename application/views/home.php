@@ -612,6 +612,15 @@
             padding-right: 0 !important;
         }
     }
+
+    .section-header {
+        /* text-align: center; */
+        padding-bottom: 40px;
+    }
+
+    .recent-blog-posts .post-item {
+        background-color: white;
+    }
 </style>
 
 <body>
@@ -679,9 +688,19 @@
 
     <main id="main">
 
+        <!-- <section id="alt-services" class="alt-services">
+            <div class="" data-aos="fade-up">
+                <div class="col-lg-12 ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.4659810412295!2d110.42158575061426!3d-7.071847094867467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70894c93cfe3c3%3A0xc685bad895a17ade!2sTB.%20Combo%20Putra!5e0!3m2!1sid!2sid!4v1618369884871!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </section> -->
+
         <!-- ======= Recent Blog Posts Section ======= -->
 
-        <section id="recent-blog-posts" class="recent-blog-posts tren-slideview">
+        <section id="recent-blog-posts" class="recent-blog-posts tren-slideview section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class=" section-header">
@@ -737,7 +756,7 @@
 
         <!-- End Recent Blog Posts Section -->
 
-        <section id="project-details" class="project-details recent-blog-posts tren-slide">
+        <section id="project-details" class="project-details recent-blog-posts tren-slide section-bg">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="section-header">
@@ -795,7 +814,7 @@
         </section>
 
         <!-- ======= Stats Counter Section ======= -->
-        <section id="stats-counter" class="stats-counter section-bg">
+        <!-- <section id="stats-counter" class="stats-counter section-bg">
             <div class="container">
 
                 <div class="row gy-4">
@@ -808,7 +827,7 @@
                                 <p style="font-family: lato; font-weight:300;">Penjualan Hari Ini </p>
                             </div>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
@@ -818,7 +837,7 @@
                                 <p style="font-family: lato; font-weight:300;">Pengiriman Hari Ini</p>
                             </div>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
                             <i class="bi bi-people color-pink flex-shrink-0"></i>
@@ -827,7 +846,7 @@
                                 <p style="font-family: lato; font-weight:300;">Kunjungan Web Hari Ini</p>
                             </div>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
                             <i class="bi bi-journal-bookmark color-green flex-shrink-0"></i>
@@ -836,12 +855,13 @@
                                 <p style="font-family: lato; font-weight:300;">Kritik & Saran Hari ini</p>
                             </div>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                 </div>
 
             </div>
-        </section><!-- End Stats Counter Section -->
+        </section> -->
+        <!-- End Stats Counter Section -->
 
         <!-- ======= Alt Services Section ======= -->
         <section id="alt-services" class="alt-services">
@@ -1215,13 +1235,13 @@
 
                 <ul class="nav nav-tabs row  g-2 d-flex">
 
-                    <li class="nav-item col-2">
+                    <li class="nav-item col-1">
                         <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
                             <h4>Dulux</h4>
                         </a>
                     </li><!-- End tab nav item -->
 
-                    <li class="nav-item col-2">
+                    <li class="nav-item col-1">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
                             <h4>Avian</h4>
                         </a><!-- End tab nav item -->
@@ -1233,7 +1253,7 @@
                     </li>  -->
                         <!-- End tab nav item -->
 
-                    <li class="nav-item col-2">
+                    <li class="nav-item col-1">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
                             <h4>Propan</h4>
                         </a>
@@ -1244,14 +1264,34 @@
                         </a>
                     </li><!-- End tab nav item -->
 
-                    <li class="nav-item col-2">
+                    <li class="nav-item col-1">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-6">
                             <h4>Premio</h4>
                         </a>
                     </li><!-- End tab nav item -->
-                    <li class="nav-item col-2">
+                    <li class="nav-item col-1">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-7">
                             <h4>Shintex</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item col-2">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-8">
+                            <h4>Mowilex</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item col-1">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-9">
+                            <h4>Decolith</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item col-1">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-10">
+                            <h4>Taka</h4>
+                        </a>
+                    </li><!-- End tab nav item -->
+                    <li class="nav-item col-1">
+                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-11">
+                            <h4>Altex</h4>
                         </a>
                     </li><!-- End tab nav item -->
                 </ul>
@@ -1260,9 +1300,9 @@
                     <div class="tab-pane active show" id="tab-1">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Produk Paint</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT DULUX</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Tidak hanya mengubah dinding, namun juga menyempurnakan kehidupan jutaan manusia di dunia.
                                 </p>
 
                                 <div class="row gy-4">
@@ -1322,9 +1362,9 @@
                     <div class="tab-pane" id="tab-2">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Neque exercitationem debitis</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT AVIAN BRANDS</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Memberikan nilai tambah bagi pemangku kepentingan melalui pengembangan beragam cat berkualitas.
                                 </p>
                                 <div class="row gy-4">
                                     <?php foreach ($catavian as $catbyavian) { ?>
@@ -1446,9 +1486,9 @@
                     <div class="tab-pane" id="tab-4">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Omnis fugiat ea explicabo sunt</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT PROPAN</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Menyediakan produk yang bernilai tambah tinggi dan menjadi solusi bagi seluruh pelanggan berdasarkan Kualitas kesesuaian, Kualitas keandalan, Kualitas konsistensi, Kualitas pelayanan, Kualitas penggunaan
                                 </p>
                                 <div class="row gy-4">
                                     <?php foreach ($catpropan as $catbypropan) { ?>
@@ -1505,9 +1545,10 @@
                     <div class="tab-pane" id="tab-5">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Omnis fugiat ea explicabo sunt</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT NIPPON PAINT</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Merek terkemuka yang menghadirkan warna & kegembiraan dalam kehidupan sehari-hari melalui
+                                    solusi pelapisan yang inovatif.
                                 </p>
                                 <div class="row gy-4">
                                     <?php foreach ($catnippon as $catbynippon) { ?>
@@ -1564,9 +1605,9 @@
                     <div class="tab-pane" id="tab-6">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Omnis fugiat ea explicabo sunt</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT PREMIO</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Memiliki daya tahan yang baik terhadap cuaca.
                                 </p>
                                 <div class="row gy-4">
                                     <?php foreach ($catpremio as $catbypremio) { ?>
@@ -1623,9 +1664,9 @@
                     <div class="tab-pane" id="tab-7">
                         <div class="row">
                             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">Omnis fugiat ea explicabo sunt</h3>
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT SHINTEX</h3>
                                 <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    Menciptakan produk unggulan sesuai perkembangan pasar nasional yang aman bagi lingkungan.
                                 </p>
                                 <div class="row gy-4">
                                     <?php foreach ($catshintex as $catbyshintex) { ?>
@@ -1680,6 +1721,245 @@
                         </div>
                     </div><!-- End tab content item -->
 
+                    <div class="tab-pane" id="tab-8">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT MOWILEX</h3>
+                                <p class="fst-italic">
+                                    Menjadi produsen cat pertama yang memproduksi cat berbahan dasar air, menjual cat dalam bentuk volume, bukan berat.
+                                </p>
+                                <div class="row gy-4">
+                                    <?php foreach ($catmowilex as $catbymowilex) { ?>
+                                        <?php
+                                        if ($catbymowilex->nama_foto_barang !== null) {
+                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbymowilex->nama_foto_barang;
+                                        } else {
+                                            $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
+                                        } ?>
+
+                                        <?php
+                                        if ($catbymowilex->stok_update >= '5') {
+                                            $stok = "Tersedia";
+                                        } elseif ($catbymowilex->stok_update < '5' && $catbymowilex > '0') {
+                                            $stok = "Hampir Habis";
+                                        } else {
+                                            $stok = "Preorder";
+                                        }
+                                        ?>
+                                        <div class="col-xl-4 col-md-6 responsiv-cat" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="post-item position-relative h-100 background-paint">
+                                                <div class="post-img position-relative overflow-hidden center-paint">
+                                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $catbymowilex->id_barang ?>"><img src="<?php echo $img ?>" class="img-fluid img-paint" alt=""></a>
+                                                </div>
+                                                <div class="post-content d-flex flex-column">
+
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbymowilex->nama_barang ?></h3>
+                                                    <hr style="margin-bottom: 10px;">
+                                                    <div class="meta align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbymowilex->harga_jual) ?> </span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- End post item -->
+
+                                    <?php } ?>
+                                    <div data-aos="fade-up" data-aos-delay="100">
+                                        <a href="<?php echo base_url('Katalog?id_kategori=') . $catbymowilex->id_kategori . '&nama_kategori=' . $catbymowilex->nama_kategori . '&id_subkategori=' . $catbymowilex->id_subkategori . '&nama_subkategori=' . $catbymowilex->nama_subkategori . '&id_merk=' . $catbymowilex->id_merk . '&merk=' . $catbymowilex->nama_merk ?>">
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/mowilex.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div><!-- End tab content item -->
+
+                    <div class="tab-pane" id="tab-9">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT DECOLITH</h3>
+                                <p class="fst-italic">
+                                    Memastikan kepuasan pelanggan dengan produk yang berkualitas, inovatif dan konsisten serta pelayanan yang dapat diandalkan.
+                                </p>
+                                <div class="row gy-4">
+                                    <?php foreach ($catdecolith as $catbydecolith) { ?>
+                                        <?php
+                                        if ($catbydecolith->nama_foto_barang !== null) {
+                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbydecolith->nama_foto_barang;
+                                        } else {
+                                            $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
+                                        } ?>
+
+                                        <?php
+                                        if ($catbydecolith->stok_update >= '5') {
+                                            $stok = "Tersedia";
+                                        } elseif ($catbydecolith->stok_update < '5' && $catbydecolith > '0') {
+                                            $stok = "Hampir Habis";
+                                        } else {
+                                            $stok = "Preorder";
+                                        }
+                                        ?>
+                                        <div class="col-xl-4 col-md-6 responsiv-cat" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="post-item position-relative h-100 background-paint">
+                                                <div class="post-img position-relative overflow-hidden center-paint">
+                                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $catbydecolith->id_barang ?>"><img src="<?php echo $img ?>" class="img-fluid img-paint" alt=""></a>
+                                                </div>
+                                                <div class="post-content d-flex flex-column">
+
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbydecolith->nama_barang ?></h3>
+                                                    <hr style="margin-bottom: 10px;">
+                                                    <div class="meta align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbydecolith->harga_jual) ?> </span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- End post item -->
+
+                                    <?php } ?>
+                                    <div data-aos="fade-up" data-aos-delay="100">
+                                        <a href="<?php echo base_url('Katalog?id_kategori=') . $catbydecolith->id_kategori . '&nama_kategori=' . $catbydecolith->nama_kategori . '&id_subkategori=' . $catbydecolith->id_subkategori . '&nama_subkategori=' . $catbydecolith->nama_subkategori . '&id_merk=' . $catbydecolith->id_merk . '&merk=' . $catbydecolith->nama_merk ?>">
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/decolith.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div><!-- End tab content item -->
+
+                    <div class="tab-pane" id="tab-10">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT TAKA</h3>
+                                <p class="fst-italic">
+                                    Hadir untuk memberikan pilihan terbaik untuk ruangan Anda.
+                                </p>
+                                <div class="row gy-4">
+                                    <?php foreach ($cattaka as $catbytaka) { ?>
+                                        <?php
+                                        if ($catbytaka->nama_foto_barang !== null) {
+                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbytaka->nama_foto_barang;
+                                        } else {
+                                            $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
+                                        } ?>
+
+                                        <?php
+                                        if ($catbytaka->stok_update >= '5') {
+                                            $stok = "Tersedia";
+                                        } elseif ($catbytaka->stok_update < '5' && $catbytaka > '0') {
+                                            $stok = "Hampir Habis";
+                                        } else {
+                                            $stok = "Preorder";
+                                        }
+                                        ?>
+                                        <div class="col-xl-4 col-md-6 responsiv-cat" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="post-item position-relative h-100 background-paint">
+                                                <div class="post-img position-relative overflow-hidden center-paint">
+                                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $catbytaka->id_barang ?>"><img src="<?php echo $img ?>" class="img-fluid img-paint" alt=""></a>
+                                                </div>
+                                                <div class="post-content d-flex flex-column">
+
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbytaka->nama_barang ?></h3>
+                                                    <hr style="margin-bottom: 10px;">
+                                                    <div class="meta align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbytaka->harga_jual) ?> </span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- End post item -->
+
+                                    <?php } ?>
+                                    <div data-aos="fade-up" data-aos-delay="100">
+                                        <a href="<?php echo base_url('Katalog?id_kategori=') . $catbytaka->id_kategori . '&nama_kategori=' . $catbytaka->nama_kategori . '&id_subkategori=' . $catbytaka->id_subkategori . '&nama_subkategori=' . $catbytaka->nama_subkategori . '&id_merk=' . $catbytaka->id_merk . '&merk=' . $catbytaka->nama_merk ?>">
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/taka.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div><!-- End tab content item -->
+
+                    <div class="tab-pane" id="tab-11">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                                <h3 style="margin-bottom: 0px; padding-bottom:0px;">CAT ALTEX</h3>
+                                <p class="fst-italic">
+                                    Tahan terhadap segala cuaca, baik panas maupun hujan, diformulasikan khusus anti karat, anti rayap, dan anti jamur
+                                </p>
+                                <div class="row gy-4">
+                                    <?php foreach ($cataltex as $catbyaltex) { ?>
+                                        <?php
+                                        if ($catbyaltex->nama_foto_barang !== null) {
+                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyaltex->nama_foto_barang;
+                                        } else {
+                                            $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
+                                        } ?>
+
+                                        <?php
+                                        if ($catbyaltex->stok_update >= '5') {
+                                            $stok = "Tersedia";
+                                        } elseif ($catbyaltex->stok_update < '5' && $catbyaltex > '0') {
+                                            $stok = "Hampir Habis";
+                                        } else {
+                                            $stok = "Preorder";
+                                        }
+                                        ?>
+                                        <div class="col-xl-4 col-md-6 responsiv-cat" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="post-item position-relative h-100 background-paint">
+                                                <div class="post-img position-relative overflow-hidden center-paint">
+                                                    <a href="<?php echo base_url('ProdukSingle?id_barang=') . $catbyaltex->id_barang ?>"><img src="<?php echo $img ?>" class="img-fluid img-paint" alt=""></a>
+                                                </div>
+                                                <div class="post-content d-flex flex-column">
+
+                                                    <h3 style="margin-left: 5%; margin-right:5%; height:40px; font-family: lato; font-weight:300; color: #364d59;" class="post-title"><?php echo $catbyaltex->nama_barang ?></h3>
+                                                    <hr style="margin-bottom: 10px;">
+                                                    <div class="meta align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="margin-left: 5%; margin-right:5%; font-family: lato; font-weight:500; color:#000000; " class="">Rp <?php echo number_format($catbyaltex->harga_jual) ?> </span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <i class=""></i> <span style="font-family: lato;" class="statusstok"><?php echo $stok ?> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- End post item -->
+
+                                    <?php } ?>
+                                    <div data-aos="fade-up" data-aos-delay="100">
+                                        <a href="<?php echo base_url('Katalog?id_kategori=') . $catbyaltex->id_kategori . '&nama_kategori=' . $catbyaltex->nama_kategori . '&id_subkategori=' . $catbyaltex->id_subkategori . '&nama_subkategori=' . $catbyaltex->nama_subkategori . '&id_merk=' . $catbyaltex->id_merk . '&merk=' . $catbyaltex->nama_merk ?>">
+                                            <p class="btncatbymerk"><i style="font-style: normal;" class="bi-palette2"> Tampilkan Semua</i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img style="margin-top: 10px; border-radius:8px" src="<?php echo base_url('assets/') ?>img/altex.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div><!-- End tab content item -->
                 </div>
 
             </div>
@@ -1690,7 +1970,7 @@
 
                 <div class="section-header">
                     <h2>Belanja Berdasarkan Merk</h2>
-                    <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
+                    <p>Tinggal pilih merk apa yang anda cari, kami menyediakan kebutuhan bahan bangunan dengan berbagai macam merk.</p>
                 </div>
                 <div class="position-relative h-100 row">
                     <div class="slides-1 portfolio-details-slider swiper col-lg-6 row merk-tab padding-merk" style="border-radius:5px; margin-right: 0px;">
@@ -1778,7 +2058,7 @@
 
                 <div class="section-header">
                     <h2>Testimonials</h2>
-                    <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
+                    <!-- <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p> -->
                 </div>
 
                 <div class="slides-2 swiper">
@@ -1881,6 +2161,16 @@
             </div>
         </section><!-- End Testimonials Section -->
 
+        <section id="alt-services" class="alt-services">
+
+            <div class="" data-aos="fade-up">
+                <div class="col-lg-12 ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.4659810412295!2d110.42158575061426!3d-7.071847094867467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70894c93cfe3c3%3A0xc685bad895a17ade!2sTB.%20Combo%20Putra!5e0!3m2!1sid!2sid!4v1618369884871!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+
+                </div>
+            </div>
+
+        </section>
 
 
     </main><!-- End #main -->

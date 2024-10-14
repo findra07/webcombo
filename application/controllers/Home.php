@@ -33,6 +33,11 @@ class Home extends CI_Controller
         $data['catnippon'] = $this->CatModel->merknippon();
         $data['catpremio'] = $this->CatModel->merkpremio();
         $data['catshintex'] = $this->CatModel->merkshintex();
+        $data['catmowilex'] = $this->CatModel->merkmowilex();
+        $data['catdecolith'] = $this->CatModel->merkdecolith();
+        $data['cattaka'] = $this->CatModel->merktaka();
+        $data['cataltex'] = $this->CatModel->merkaltex();
+
 
         $data['jml_penjualan'] = $this->KatalogModel->jml_penjualan();
         $data['jml_pengiriman'] = $this->KatalogModel->jml_pengiriman();

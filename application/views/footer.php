@@ -34,14 +34,16 @@
                             <strong>Phone :</strong> 0853-5747-2345 / (024) 747-2345<br>
                             <strong>Email :</strong> comboputra@gmail.com<br>
                         </p>
-                        <div class="social-links d-flex mt-3">
+                        <!-- <div class="social-links d-flex mt-3">
                             <a href="https://www.instagram.com/tokocomboputra/?igshid=rmxoc7or9osl" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
                             <a href="https://www.facebook.com/comboputra79" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
                             <a href="https://www.tokopedia.com/comboputra" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/tokopedia.png" alt="" width="22px"></i></a>
                             <a href="https://shopee.co.id/comboputra" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/shopee.png" alt="" width="28px"></i></a>
-                            <!-- <a href="https://www.bukalapak.com/u/combo_putra_82495" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/bukalapak.png" alt="" width="25px"></i></a> -->
-                        </div>
+                            <a href="https://www.bukalapak.com/u/combo_putra_82495" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi"><img src="<?php echo base_url('assets/') ?>img/bukalapak.png" alt="" width="25px"></i></a>
+                        </div> -->
                     </div>
+
+
                 </div><!-- End footer info column-->
 
                 <div class="col-lg-2 col-md-3 footer-links flex-tautan">
@@ -50,7 +52,7 @@
                         <li><a href="<?php echo base_url('Home') ?>">Beranda</a></li>
                         <li><a href="<?php echo base_url('About') ?>">Tentang Kami</a></li>
                         <li><a href="<?php echo base_url('Katalog') ?>">Produk</a></li>
-                        <li><a href="<?php echo base_url('Gallery') ?>">Galeri</a></li>
+                        <!-- <li><a href="<?php echo base_url('Gallery') ?>">Galeri</a></li> -->
                         <li><a href="<?php echo base_url('Contact') ?>">Hubungi Kami</a></li>
                     </ul>
                 </div><!-- End footer links column-->
@@ -93,6 +95,13 @@
                     </ul>
                 </div>
                 <!-- End footer links column-->
+
+                <!-- <div class="" data-aos="fade-up">
+                    <div class="col-lg-12 ">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.4659810412295!2d110.42158575061426!3d-7.071847094867467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70894c93cfe3c3%3A0xc685bad895a17ade!2sTB.%20Combo%20Putra!5e0!3m2!1sid!2sid!4v1618369884871!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>

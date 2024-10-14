@@ -160,7 +160,7 @@
 
                         <h1 style="font-family: lato; font-weight:900;"><?php echo $detail->nama_barang ?></h1>
                         <p class="hrgproduk">
-                            Rp <?php echo number_format($detail->harga_jual) ?>
+                            Rp <?php echo str_replace(',', '.', number_format($detail->harga_jual, 0, ',', '.')); ?>
                         </p>
                         <div class="services-list ">
 
@@ -174,17 +174,17 @@
 
                         <div class="detail">
                             <h4 style="font-family: lato; font-weight:700; font-size:20px;">Detail Produk</h4>
-                            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
-                            <ul>
+                            <!-- <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p> -->
+                            <!-- <ul>
                                 <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
                                 <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
                                 <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-                            </ul>
-                            <p>
+                            </ul> -->
+                            <!-- <p>
                                 Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-                            </p>
-                            <p>
-                                Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
+                            </p> -->
+                            <p style="text-indent: 40px; text-align:justify; font-family: lato; font-weight:500; font-size:17px;">
+                                Pusat kebutuhan bahan bangunan dan kontruksi terpercaya. Kami menyediakan berbagai macam produk berkualitas yang dirancang untuk memenuhi kebutuhan proyek bangunan anda, mulai dari proyek rumah tangga hingga proyek besar skala industri.
                             </p>
                         </div>
 
