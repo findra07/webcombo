@@ -114,7 +114,8 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000086', '000000000092') 
+        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000086', '000000000092') AND ts.stok_update != '0'
+        GROUP BY tsub.id_subkategori
         ORDER BY `ts`.`stok_jual` DESC 
         LIMIT 3")->result();
 
@@ -130,9 +131,9 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000097', '000000000106', '000000000341','000000000339') 
-        ORDER BY `ts`.`stok_jual` DESC 
-        LIMIT 3")->result();
+         WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000097', '000000000106', '000000000341','000000000339', '000000000338') AND tsub.nama_subkategori LIKE '%cat%' AND ts.stok_update != '0'
+        GROUP BY tm.id_merk
+        ORDER BY `tm`.`nama_merk` DESC LIMIT 3;")->result();
 
         return $data;
     }
@@ -162,7 +163,8 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000100') 
+        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000100') AND ts.stok_update != '0' 
+        GROUP BY tsub.id_subkategori
         ORDER BY `ts`.`stok_jual` DESC 
         LIMIT 3")->result();
 
@@ -178,8 +180,8 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000300') 
-        ORDER BY `ts`.`stok_jual` DESC 
+        WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000300') and tb.status_barang ='0'
+        ORDER BY `tb`.`nama_barang` ASC 
         LIMIT 3")->result();
 
         return $data;
@@ -211,8 +213,8 @@ class CatModel extends CI_Model
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
         WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000094') 
-        ORDER BY `ts`.`stok_jual` DESC 
-        LIMIT 3")->result();
+        ORDER BY `ts`.`stok_update` DESC 
+        LIMIT 1, 3")->result();
 
         return $data;
     }
@@ -227,7 +229,8 @@ class CatModel extends CI_Model
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
         WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000091') 
-        ORDER BY `ts`.`stok_jual` DESC 
+        GROUP BY tsub.id_subkategori 
+        ORDER BY `ts`.`stok_update` DESC 
         LIMIT 3")->result();
 
         return $data;
@@ -243,7 +246,7 @@ class CatModel extends CI_Model
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
         WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000095') 
-        ORDER BY `ts`.`stok_jual` DESC 
+        ORDER BY `ts`.`stok_update` DESC 
         LIMIT 3")->result();
 
         return $data;
@@ -258,8 +261,9 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000393') 
-        ORDER BY `ts`.`stok_jual` DESC 
+        WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000393') AND tfb.nama_foto_barang != 'null'
+        GROUP BY tsub.id_subkategori  
+        ORDER BY `tsub`.`nama_subkategori` DESC
         LIMIT 3")->result();
 
         return $data;
@@ -274,8 +278,9 @@ class CatModel extends CI_Model
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
-        WHERE tk.id_kategori = '000000000183' AND tb.nama_barang LIKE '%cat%' AND tm.id_merk IN('000000000096') 
-        ORDER BY `ts`.`stok_jual` DESC 
+        WHERE tk.id_kategori = '000000000183' AND tm.id_merk IN('000000000096') 
+        GROUP BY tsub.id_subkategori 
+        ORDER BY `tb`.`nama_barang` ASC
         LIMIT 3")->result();
 
         return $data;

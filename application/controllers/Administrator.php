@@ -372,6 +372,17 @@ class Administrator extends CI_Controller
             echo json_encode(['success' => false, 'error' => implode('<br>', $error)]);
         }
     }
+
+    function properti()
+    {
+        $this->load->library('session');
+        $username = $this->session->userdata('username');
+
+        $data['jmlnotajual'] = $this->RekapDataModel->dailysales();
+        $data['jmlnotarupiah'] = $this->RekapDataModel->dailysalesrp();
+        $data['user'] = $this->AuthModel->get_user($username);
+        $this->load->view('administrator/adminproperti', $data);
+    }
 }
 
 

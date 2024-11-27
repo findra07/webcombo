@@ -266,10 +266,11 @@ class KatalogModel extends CI_Model
         FROM tabel_barang tb 
         JOIN tabel_subkategori tsub ON tsub.id_subkategori = tb.id_subkategori 
         JOIN tabel_kategori tk ON tk.id_kategori = tsub.id_kategori 
-        JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
-        JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
-        LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang WHERE tb.status_barang ='0' AND tk.id_kategori = '000000000180'
-        ORDER BY ts.stok_jual DESC LIMIT 6")->result();
+        JOIN tabel_stok ts ON ts.id_barang = tb.id_barang JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
+        LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang 
+        WHERE tb.status_barang ='0' AND tk.id_kategori = '000000000180' AND tsub.nama_subkategori LIKE '%lampu%' AND tb.nama_barang NOT LIKE '%fitting%' AND tm.nama_merk != 'Wandi' 
+        GROUP BY tsub.id_subkategori 
+        ORDER BY `tsub`.`nama_subkategori` ASC LIMIT 6")->result();
 
         return $data;
     }
@@ -297,7 +298,7 @@ class KatalogModel extends CI_Model
         JOIN tabel_kategori tk ON tk.id_kategori = tsub.id_kategori 
         JOIN tabel_stok ts ON ts.id_barang = tb.id_barang 
         JOIN tabel_merk tm ON tm.id_merk = tb.id_merk 
-        LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang WHERE tb.status_barang ='0' AND tk.id_kategori = '000000000179'
+        LEFT JOIN tabel_foto_barang tfb ON tfb.id_barang = tb.id_barang WHERE tb.status_barang ='0' AND tk.id_kategori = '000000000179' AND tb.nama_barang LIKE '%mesin%'
         ORDER BY ts.stok_jual DESC LIMIT 6")->result();
 
         return $data;

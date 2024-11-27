@@ -529,13 +529,13 @@
                             let idMerk = urlParams.get('id_merk');
 
 
-                            if (idKategori === null && idSubkategori === null && idMerk === null) {
-                                idSubkategori = '000000000010';
-                                idKategori = '000000000169';
-                                console.log("000000000010, 000000000169")
-                            } else {
-                                console.log("idKategori:", idKategori, "idSubkategori:", idSubkategori);
-                            }
+                            // if (idKategori === null && idSubkategori === null && idMerk === null) {
+                            //     idSubkategori = '000000000010';
+                            //     idKategori = '000000000169';
+                            //     console.log("000000000010, 000000000169")
+                            // } else {
+                            //     console.log("idKategori:", idKategori, "idSubkategori:", idSubkategori);
+                            // }
 
                             $('#search').on('keyup', function(event) {
                                 let nama_produk = $(this).val();
@@ -566,7 +566,7 @@
                                 let status;
 
                                 response.data.map((value, key) => {
-                                    gambar = value.nama_foto_barang === null ? 'https://sicora.comboputra.co.id/assets/images/o-redlogo.png' : `https://sicora.comboputra.co.id/assets/foto/barang/${value.nama_foto_barang}`;
+                                    gambar = value.nama_foto_barang === null ? 'https://sicora.comboputra.co.id/assets/images/o-redlogo.png' : `https://sicoraerp.comboputra.co.id/public/img/thumb/${value.nama_foto_barang}`;
                                     if (value.stok_update > 0) {
                                         status = "Ready"
                                     } else {

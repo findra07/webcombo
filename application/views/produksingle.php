@@ -138,7 +138,7 @@
 
                                     <?php
                                     if ($detail->nama_foto_barang !== null) {
-                                        $foto = "https://sicora.comboputra.co.id/assets/foto/barang/" . $detail->nama_foto_barang;
+                                        $foto = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $detail->nama_foto_barang;
                                     } else {
                                         $foto = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                     } ?>

@@ -144,6 +144,9 @@
         case 'content':
             $breadcrumb_title = 'Content';
             break;
+        case 'properti':
+            $breadcrumb_title = 'Properti';
+            break;
     }
     ?>
     <!-- Breadcrumb start -->

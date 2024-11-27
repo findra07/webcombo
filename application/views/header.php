@@ -82,6 +82,7 @@
                 <li><a href="<?php echo base_url('Home') ?>">Beranda</a></li>
                 <li><a href="<?php echo base_url('About') ?>">Tentang Kami</a></li>
                 <li><a href="<?php echo base_url('Katalog') ?>" class="">Produk</a></li>
+                <li><a href="<?php echo base_url('Rumah') ?>" class="">Rumah Dijual</a></li>
                 <li><a href="<?php echo base_url('Contact') ?>">Hubungi Kami</a></li>
             </ul>
             <ul style="display:flex; float:inline-end;">
@@ -100,6 +101,7 @@
                 <li><a href="<?php echo base_url('Home') ?>">Beranda</a></li>
                 <li><a href="<?php echo base_url('About') ?>">Tentang Kami</a></li>
                 <li><a href="<?php echo base_url('Katalog') ?>" class="">Produk</a></li>
+                <li><a href="<?php echo base_url('Rumah') ?>" class="">Rumah Dijual</a></li>
                 <li><a href="<?php echo base_url('Contact') ?>">Hubungi Kami</a></li>
 
                 <div style="display:flex; float:inline-start; margin-top: 10px">

@@ -713,7 +713,7 @@
                         <?php
 
                         if ($tren->nama_foto_barang !== null) {
-                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tren->nama_foto_barang;
+                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tren->nama_foto_barang;
                         } else {
                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                         } ?>
@@ -772,7 +772,7 @@
                                 <?php
 
                                 if ($tren->nama_foto_barang !== null) {
-                                    $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tren->nama_foto_barang;
+                                    $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tren->nama_foto_barang;
                                 } else {
                                     $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 } ?>
@@ -877,7 +877,7 @@
                             <?php foreach ($section1 as $tampil) { ?>
                                 <?php
                                 if ($tampil->nama_foto_barang !== null) {
-                                    $fotosection1 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil->nama_foto_barang;
+                                    $fotosection1 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil->nama_foto_barang;
                                 } else {
                                     $fotosection1 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -900,7 +900,7 @@
                             <?php foreach ($section1 as $tampil) { ?>
                                 <?php
                                 if ($tampil->nama_foto_barang !== null) {
-                                    $fotosection1 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil->nama_foto_barang;
+                                    $fotosection1 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil->nama_foto_barang;
                                 } else {
                                     $fotosection1 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -947,7 +947,7 @@
                             <?php foreach ($section2 as $tampil2) { ?>
                                 <?php
                                 if ($tampil2->nama_foto_barang !== null) {
-                                    $fotosection2 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil2->nama_foto_barang;
+                                    $fotosection2 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil2->nama_foto_barang;
                                 } else {
                                     $fotosection2 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -968,7 +968,7 @@
                             <?php foreach ($section2 as $tampil2) { ?>
                                 <?php
                                 if ($tampil2->nama_foto_barang !== null) {
-                                    $fotosection2 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil2->nama_foto_barang;
+                                    $fotosection2 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil2->nama_foto_barang;
                                 } else {
                                     $fotosection2 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1013,7 +1013,7 @@
                             <?php foreach ($section3 as $tampil3) { ?>
                                 <?php
                                 if ($tampil3->nama_foto_barang !== null) {
-                                    $fotosection3 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil3->nama_foto_barang;
+                                    $fotosection3 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil3->nama_foto_barang;
                                 } else {
                                     $fotosection3 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1034,7 +1034,7 @@
                             <?php foreach ($section3 as $tampil3) { ?>
                                 <?php
                                 if ($tampil3->nama_foto_barang !== null) {
-                                    $fotosection3 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil3->nama_foto_barang;
+                                    $fotosection3 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil3->nama_foto_barang;
                                 } else {
                                     $fotosection3 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1083,7 +1083,7 @@
                             <?php foreach ($section4 as $tampil4) { ?>
                                 <?php
                                 if ($tampil4->nama_foto_barang !== null) {
-                                    $fotosection4 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil4->nama_foto_barang;
+                                    $fotosection4 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil4->nama_foto_barang;
                                 } else {
                                     $fotosection4 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1105,7 +1105,7 @@
                             <?php foreach ($section4 as $tampil4) { ?>
                                 <?php
                                 if ($tampil4->nama_foto_barang !== null) {
-                                    $fotosection4 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil4->nama_foto_barang;
+                                    $fotosection4 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil4->nama_foto_barang;
                                 } else {
                                     $fotosection4 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1152,7 +1152,7 @@
                             <?php foreach ($section5 as $tampil5) { ?>
                                 <?php
                                 if ($tampil5->nama_foto_barang !== null) {
-                                    $fotosection5 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil5->nama_foto_barang;
+                                    $fotosection5 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil5->nama_foto_barang;
                                 } else {
                                     $fotosection5 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1174,7 +1174,7 @@
                             <?php foreach ($section5 as $tampil5) { ?>
                                 <?php
                                 if ($tampil5->nama_foto_barang !== null) {
-                                    $fotosection5 = "https://sicora.comboputra.co.id/assets/foto/barang/" . $tampil5->nama_foto_barang;
+                                    $fotosection5 = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $tampil5->nama_foto_barang;
                                 } else {
                                     $fotosection5 = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                 }
@@ -1309,7 +1309,7 @@
                                     <?php foreach ($catdulux as $catbydulux) { ?>
                                         <?php
                                         if ($catbydulux->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbydulux->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbydulux->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1370,7 +1370,7 @@
                                     <?php foreach ($catavian as $catbyavian) { ?>
                                         <?php
                                         if ($catbyavian->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyavian->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbyavian->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1431,7 +1431,7 @@
                                     <?php foreach ($catjotun as $catbyjotun) { ?>
                                         <?php
                                         if ($catbyjotun->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyjotun->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbyjotun->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1494,7 +1494,7 @@
                                     <?php foreach ($catpropan as $catbypropan) { ?>
                                         <?php
                                         if ($catbypropan->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbypropan->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbypropan->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1554,7 +1554,7 @@
                                     <?php foreach ($catnippon as $catbynippon) { ?>
                                         <?php
                                         if ($catbynippon->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbynippon->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbynippon->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1613,7 +1613,7 @@
                                     <?php foreach ($catpremio as $catbypremio) { ?>
                                         <?php
                                         if ($catbypremio->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbypremio->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbypremio->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1672,7 +1672,7 @@
                                     <?php foreach ($catshintex as $catbyshintex) { ?>
                                         <?php
                                         if ($catbyshintex->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyshintex->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbyshintex->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1732,7 +1732,7 @@
                                     <?php foreach ($catmowilex as $catbymowilex) { ?>
                                         <?php
                                         if ($catbymowilex->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbymowilex->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbymowilex->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1792,7 +1792,7 @@
                                     <?php foreach ($catdecolith as $catbydecolith) { ?>
                                         <?php
                                         if ($catbydecolith->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbydecolith->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbydecolith->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1852,7 +1852,7 @@
                                     <?php foreach ($cattaka as $catbytaka) { ?>
                                         <?php
                                         if ($catbytaka->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbytaka->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbytaka->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -1912,7 +1912,7 @@
                                     <?php foreach ($cataltex as $catbyaltex) { ?>
                                         <?php
                                         if ($catbyaltex->nama_foto_barang !== null) {
-                                            $img = "https://sicora.comboputra.co.id/assets/foto/barang/" . $catbyaltex->nama_foto_barang;
+                                            $img = "https://sicoraerp.comboputra.co.id/public/img/thumb/" . $catbyaltex->nama_foto_barang;
                                         } else {
                                             $img = "https://sicora.comboputra.co.id/assets/images/o-redlogo.png";
                                         } ?>
@@ -2162,6 +2162,10 @@
         </section><!-- End Testimonials Section -->
 
         <section id="alt-services" class="alt-services">
+            <div class="section-header">
+                <h2>Lokasi Toko</h2>
+                <!-- <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p> -->
+            </div>
 
             <div class="" data-aos="fade-up">
                 <div class="col-lg-12 ">

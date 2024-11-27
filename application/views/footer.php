@@ -52,6 +52,7 @@
                         <li><a href="<?php echo base_url('Home') ?>">Beranda</a></li>
                         <li><a href="<?php echo base_url('About') ?>">Tentang Kami</a></li>
                         <li><a href="<?php echo base_url('Katalog') ?>">Produk</a></li>
+                        <li><a href="<?php echo base_url('Rumah') ?>">Rumah Dijual</a></li>
                         <!-- <li><a href="<?php echo base_url('Gallery') ?>">Galeri</a></li> -->
                         <li><a href="<?php echo base_url('Contact') ?>">Hubungi Kami</a></li>
                     </ul>
